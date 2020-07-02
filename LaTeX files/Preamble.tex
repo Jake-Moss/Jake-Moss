@@ -1,0 +1,130 @@
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage[margin=15mm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage[final]{pdfpages}
+\usepackage{gauss}
+\usepackage{relsize}
+\usepackage{etoolbox}
+\usepackage[en-GB,showzone=false]{datetime2}
+% \setlength\parindent{0pt}
+\usepackage{parskip}
+
+% From Toms preamble
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{float} \restylefloat{table}
+% \definecolor{peach}{RGB}{255,218,185} % Custom colours
+
+
+\graphicspath{ {./} }
+
+\allowdisplaybreaks
+
+%-------------------------------------------- COMMANDS
+\newcommand{\sidebyside}[2]{
+
+      \noindent\begin{minipage}[t]{.5\linewidth}
+            #1
+      \end{minipage}%
+      \noindent\begin{minipage}[t]{.5\linewidth}
+            #2
+      \end{minipage}
+      
+      }
+
+\newcommand{\sidebysidebyside}[3]{
+      
+      \noindent\begin{minipage}[t]{.3\linewidth}
+            #1
+      \end{minipage}%
+      \noindent\begin{minipage}[t]{.3\linewidth}
+            #2
+      \end{minipage}%
+      \noindent\begin{minipage}[t]{.3\linewidth}
+            #3
+      \end{minipage}
+      
+      }
+
+\newcommand{\diff}{\, \mathrm{d}}
+
+\newcommand{\ddiff}[1]{\, \frac{\mathrm{d}}{\mathrm{d}  #1}}
+
+\newcommand{\limtoinfinity}[1]{\lim_{#1 \to \infty}}
+
+\newcommand{\limtoneginfinity}[1]{\lim_{#1 \to -\infty}}
+
+\newcommand{\abs}[1]{\left| #1 \right|}
+
+% \newcommand{\det}{\, \mathrm{det}}
+
+
+\newcommand{\coversheet}[2]{
+    \includepdf[pagecommand={
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[inner sep=0pt,scale=0.5] (Signature) at (3,-20.75) {\includegraphics[width=.25\textwidth]{/home/jake/Uni/Signature/Signature.png}};
+        \node[inner sep=0pt] (Date) at (5.3,-11.2) {\textsf{\today}};
+        \node[inner sep=0pt] (Gav) at (11.8,-10.05) {\textsf{#1}};
+        \node[inner sep=0pt] (Tut time) at (11.9,-11) {\textsf{#2}};
+        \node[inner sep=0pt] (Date) at (14.55,-20.75) {\textsf{\today}};
+    \end{tikzpicture}}]{Coversheet}
+}
+
+%augmented matrix line
+\makeatletter
+\patchcmd\g@matrix
+ {\vbox\bgroup}
+ {\vbox\bgroup\normalbaselines}% restore the standard base line skip
+ {}{}
+\makeatother
+
+
+\newcommand{\mline}[1][0pt]{%
+  \hspace{-\arraycolsep}%
+  \ifdim#1>0pt
+    \dimen0=\ht\strutbox \dimen2=\dimen0
+    \advance\dimen0 #1\relax
+    \ht\strutbox=\dimen0
+  \fi
+  \smash{\strut\vrule} % the `\vrule` is as high and deep as a strut
+  % since assignments to \ht\strutbox are global, we restore the height
+  \ifdim#1>0pt
+    \ht\strutbox=\dimen2
+  \fi
+  \hspace{-\arraycolsep}%
+}
+
+% tikz if statement on by default
+
+\newif\ifshowtikz
+\showtikztrue
+
+% \showtikzfalse   % <---- comment/uncomment that line
+\ifshowtikz
+\input{/home/jake/Uni/LaTeX files/tikzpaper/TikZit.tex}
+\else
+\newcommand{\tikzfig}[1]{}
+\newcommand{\ctikzfig}[1]{}
+\fi 
+
+% \renewcommand{\thesection}{\hspace{5pt} \arabic{section}.}
+
+\newcommand{\mychapter}[2]{
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+}
+
+
+
+% this stupid shit breaks my bracket colourer so I had to make a new command so I don't have miss matched colours
+\newcommand{\rightopenleftclosed}[1]{\left[ \left. #1 \right) \right. } 
+\newcommand{\leftopenrightclosed}[1]{\left( \left. #1 \right] \right. }
+
+\input{/home/jake/Uni/LaTeX files/Enviroments.tex}
+
+%shits gotta come last ffs
+\usepackage{hyperref}
+\hypersetup{pdfauthor={Jake Moss}, pdfkeywords={s46409665 - jake.moss@uqconnect.edu.au}}

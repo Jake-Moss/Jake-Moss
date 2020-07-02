@@ -1,0 +1,243 @@
+% \mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+
+% % THEOREM
+% \newcounter{theo}[section] \setcounter{theo}{0}
+% \renewcommand{\thetheo}{\arabic{section}.\arabic{theo}}
+% \newenvironment{theorem}[1][]{%
+% \refstepcounter{theo}%
+% \ifstrempty{#1}%
+% {\mdfsetup{%
+% frametitle={%
+% \tikz[baseline=(current bounding box.east),outer sep=0pt]
+% \node[anchor=east,rectangle,fill=blue!20, rounded corners=0.8mm]
+% {\strut Theorem~\thetheo};}}
+% }%
+% {\mdfsetup{%
+% frametitle={%
+% \tikz[baseline=(current bounding box.east), outer sep=0pt]
+% \node[anchor=east,rectangle,fill=blue!20, rounded corners=0.8mm]
+% {\strut Theorem~\thetheo:~#1};}}%
+% }%
+% \mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+% linewidth=2pt,topline=true,%
+% frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+% }
+% \begin{mdframed}[]\relax%
+% }{\end{mdframed}}
+
+% THEOREM
+\newenvironment{theorem}[1][]{%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20, rounded corners=0.8mm]
+{\strut Theorem};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20, rounded corners=0.8mm]
+{\strut Theorem:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+
+
+% DEFINITION
+\newcounter{defi}[section] \setcounter{defi}{0}
+\renewcommand{\thedefi}{\arabic{section}.\arabic{defi}}
+\newenvironment{definition}[1][]{%
+\refstepcounter{defi}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=green!20, rounded corners=0.8mm]
+{\strut Definition~\thedefi};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=green!20, rounded corners=0.8mm]
+{\strut Definition~\thedefi:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=green!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+
+
+% LEMMMA
+\newcounter{lema}[section] \setcounter{lema}{0}
+\renewcommand{\thelema}{\arabic{section}.\arabic{lema}}
+\newenvironment{lemma}[1][]{%
+\refstepcounter{lema}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=red!20, rounded corners=0.8mm]
+{\strut Lemma~\thelema};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=red!20, rounded corners=0.8mm]
+{\strut Lemma~\thelema:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=red!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+% EXAMPLE
+\newcounter{exam}[section] \setcounter{exam}{0}
+\renewcommand{\theexam}{\arabic{section}.\arabic{exam}}
+\newenvironment{example}[1][]{%
+\refstepcounter{exam}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=orange!20, rounded corners=0.8mm]
+{\strut Example~\theexam};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=orange!20, rounded corners=0.8mm]
+{\strut Example~\theexam:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=orange!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+% PROPOSITION
+\newcounter{prop}[section] \setcounter{prop}{0}
+\renewcommand{\theprop}{\arabic{section}.\arabic{prop}}
+\newenvironment{proposition}[1][]{%
+\refstepcounter{prop}%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=orange!20, rounded corners=0.8mm]
+{\strut Proposition~\theprop};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=orange!20, rounded corners=0.8mm]
+{\strut Proposition~\theprop:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=orange!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+% CLAIM
+\newenvironment{claim}[1][]{%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=Lavender!50, rounded corners=0.8mm]
+{\strut Claim};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=Lavender!50, rounded corners=0.8mm]
+{\strut Claim:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=Lavender!50,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+
+% NOTE
+\newenvironment{note}%
+{\begin{quote}\textbf{Note}:}%
+{\end{quote}}
+
+
+% OBSERVATION
+\newenvironment{observation}%
+{\begin{quote}\textbf{Obs}:}%
+{\end{quote}}
+
+% TOOL
+\newenvironment{tool}%
+{\begin{quote}\textbf{Tool}:}%
+{\end{quote}}
+
+% FACT
+\newenvironment{fact}%
+{\begin{quote}\textbf{Fact}:}%
+{\end{quote}}
+
+% IDEA
+\newenvironment{idea}%
+{\begin{quote}\textbf{Idea}:}%
+{\end{quote}}
+
+% Corollary
+\newenvironment{corollary}%
+{\begin{quote}\textbf{Corollary}:}%
+{\end{quote}}
+
+% Question
+\newenvironment{question}%
+{\begin{quote}\textbf{Q}:}%
+{\end{quote}}
+
+% % Remark
+% \newenvironment{remark}%
+% {\begin{quote}\textbf{Remark}:}%
+% {\end{quote}}
+
+% REMARK
+\newenvironment{remark}[1][]{%
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=NavyBlue!20, rounded corners=0.8mm]
+{\strut Remark};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=NavyBlue!20, rounded corners=0.8mm]
+{\strut Remark:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=NavyBlue!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+% Notation
+\newenvironment{notation}%
+{\begin{quote}\textbf{Notation}:}%
+{\end{quote}}

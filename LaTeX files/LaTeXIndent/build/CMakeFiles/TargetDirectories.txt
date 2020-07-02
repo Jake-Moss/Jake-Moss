@@ -1,0 +1,7 @@
+/home/jake/Uni/LaTeX files/LaTeXIndent/build/CMakeFiles/install/strip.dir
+/home/jake/Uni/LaTeX files/LaTeXIndent/build/CMakeFiles/install/local.dir
+/home/jake/Uni/LaTeX files/LaTeXIndent/build/CMakeFiles/install.dir
+/home/jake/Uni/LaTeX files/LaTeXIndent/build/CMakeFiles/list_install_components.dir
+/home/jake/Uni/LaTeX files/LaTeXIndent/build/CMakeFiles/rebuild_cache.dir
+/home/jake/Uni/LaTeX files/LaTeXIndent/build/CMakeFiles/edit_cache.dir
+/home/jake/Uni/LaTeX files/LaTeXIndent/build/CMakeFiles/uninstall.dir
