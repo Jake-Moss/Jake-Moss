@@ -1,10 +1,10 @@
-PWD /mnt/OS/Users/Jake/iCloudDrive/Documents/Uni/1st year/MATH1071/Final exam
+PWD /mnt/OS/Users/Jake/iCloudDrive/Documents/Uni/1st year/MATH1071/Releases/Final theorem list
 INPUT /etc/texmf/web2c/texmf.cnf
 INPUT /usr/share/texmf/web2c/texmf.cnf
 INPUT /usr/share/texlive/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/pdftex/pdflatex.fmt
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.tex
-OUTPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.log
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.tex
+OUTPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.log
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 INPUT /usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -292,9 +292,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/uniquecounter/uniquecounter.sty
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.aux
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.aux
-OUTPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.aux
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.aux
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.aux
+OUTPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.aux
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT /usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
@@ -311,14 +311,14 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 INPUT /usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
-OUTPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.pdf
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
-OUTPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
+OUTPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.pdf
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
+OUTPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
@@ -339,8 +339,8 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
 INPUT /var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.toc
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.toc
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.toc
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
@@ -359,35 +359,35 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
-OUTPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.toc
+OUTPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.toc
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Rolle's theorem Case 1.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Rolle's theorem Case 1.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Rolle's theorem Case 1.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Rolle's theorem Case 2.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Rolle's theorem Case 2.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Rolle's theorem Case 2.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Mean value theorem graph.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Mean value theorem graph.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Mean value theorem graph.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Character building theorem.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Character building theorem.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Character building theorem.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Rolle's theorem Case 1.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Rolle's theorem Case 1.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Rolle's theorem Case 1.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Rolle's theorem Case 2.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Rolle's theorem Case 2.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Rolle's theorem Case 2.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Mean value theorem graph.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Mean value theorem graph.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Mean value theorem graph.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Character building theorem.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Character building theorem.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Character building theorem.tikz
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/A function with finitely many discontinuities is integrable.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/A function with finitely many discontinuities is integrable.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/A function with finitely many discontinuities is integrable.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Leibniz test.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Leibniz test.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/./figures/Leibniz test.tikz
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.aux
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
-INPUT /home/jake/Uni/1st year/MATH1071/Final exam/MATH1071 Final theorem list - Jake Moss.out
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/A function with finitely many discontinuities is integrable.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/A function with finitely many discontinuities is integrable.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/A function with finitely many discontinuities is integrable.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Leibniz test.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Leibniz test.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/./figures/Leibniz test.tikz
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.aux
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
+INPUT /home/jake/Uni/1st year/MATH1071/Releases/Final theorem list/MATH1071 Final theorem list - Jake Moss.out
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
