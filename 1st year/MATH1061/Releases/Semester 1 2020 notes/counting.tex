@@ -1,0 +1,219 @@
+\section{Counting}
+\begin{example}
+    Suppose a restaurant has 5 types of cake and 2 types of ice cream to select for dessert.
+    \begin{enumerate}
+        \item How many choices for dessert are there if you select one cake and one ice cream?
+        There are $5\cdot 2 = 10$ choices. \emph{This is a sequence of tasks - first, choose a dessert, then, choose an ice cream}.
+        \item How many choices for dessert are there if you select either one cake or one ice cream, but not both?
+        There are $5 + 2 = 7$ choices. \emph{These are two distinct cases}.
+    \end{enumerate}
+\end{example}
+
+\begin{example}
+    Consider a password consisting of 3 letters from the set $\left\{A,\,B,\,C,\,\dots,\,Z\right\}$.
+    \begin{enumerate}
+        \item How many passwords are possible?
+        There are 26 choices for each of the 1st, 2nd and 3rd letters, so there are $$26\cdot 26\cdot 26 = 17576 \text{ possiblities}$$
+        \item How many passwords contain no repeated letters?
+        There are 26 letters for the 1st letter, 25 for the 2nd and 24 for the 3rd.
+        $$\therefore 26\cdot 25\cdot 24 = 15600 \text{ possiblities}$$
+        \item How many passwords use only vowels or only consonants?
+        $$\text{option } 1 \text{ (only vowels) } + \text{option } 2\text{ (only consonants)}$$
+        $$5^3 + 21^3 = 9386$$
+    \end{enumerate}
+\end{example}
+
+\begin{definition}
+    A \underline{permutation} of a set of objects is an arrangement of the objects into an order.
+\end{definition}
+
+\begin{example}
+    How many permutations of the letters in the word \emph{SWITCH} are there? i.e. SWITCH, CWITHS, etc.
+
+    $$\text{\# of these} = 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 6! = 720$$
+\end{example}
+
+\begin{theorm}
+    For any $n\in\mathbb Z^+$, the number of permutations of a set with $n$ elements is $n!$.
+\end{theorm}
+
+\begin{example}
+    Consider the permutations of the letters of the word \emph{OBJECTS}. How many permutations start with a vowel?
+
+    Option 1: start with ``o'': $6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 6!$ \\
+    Option 2: start with ``e'': $6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1 = 6!$
+    \\
+    Answer: $6!+6! = 1440$.
+\end{example}
+
+\begin{example}
+    Consider all license plates consisting of 3 digits from the set $\left\{0,\,1,\,\dots,\,9\right\}$ followed by 3 letters from the set $\left\{A,\,B,\,\dots,\,Z\right\}$
+
+    \begin{enumerate}
+        \item How many license plates are possible?
+        $$10\cdot 10\cdot 10 \cdot 26\cdot 26\cdot 26 = 17576000$$
+        \item How many license plates have no repeated symbols?
+        $$10\cdot 9\cdot 8\cdot 26\cdot 25\cdot 24 = 11232000$$
+        \item How many license plates have at least one repeated symbol?
+        We know the total number of license plates and the number of those with no repeated symbols, so the rest must have at least one repeated symbol. $$\therefore 17576000 - 11232000 = 6344000$$
+    \end{enumerate}
+\end{example}
+
+Let $n$ and $r$ to be non-negative integers.
+
+Problem: \emph{Select $r$ elements from a set containing $n$ elements. How many ways are there to do the selection?}
+
+The answer depends on:
+\begin{itemize}
+    \item whether or not order matters
+    \item whether or not repetition is allowed
+\end{itemize}
+
+Case where order matters and repetition is allowed.
+
+\begin{example}
+    We have a new ATM card and need to select a PIN. We may choose four digits from the set 
+    \[\{0,\,1,\,2,\,3,\,4,\,5,\,6,\,7,\,8,\,9\}\]
+    Order matters, and we may repeat. How many PINs are there?
+
+    In each of the four selections we have 10 choices, and hence there are $10^4$ possibilities.
+\end{example}
+
+Fact: the number of selections of $r$ elements from a set containing $n$ elements where order matters and repetition is allowed is $n^r$.
+
+Case where order matters, and there is no repetition.
+
+\begin{example}
+    If there are 7 runners, how many ways can 1st, 2nd and 3rd be awarded? $$7\cdot 6\cdot 5 = 210$$
+\end{example}
+
+\begin{definition}
+    Let $n$ and $r$ be non-negative integers with $r\leq n$. An \underline{r-permutation} of a set of $n$ elements is an ordered selection of $r$ elements taken from the set of $n$ elements. The number of r-permutations of a set of $n$ elements is denoted $P(n,r)$ or $nPr$.
+\end{definition}
+
+\newpage
+\begin{theorm}
+    If $n,\,r\in\mathbb Z$ and $1\leq r\leq n$, then $$P(n,\,r) = n(n-1)(n-2)\dots (n-r+1) = \frac{n!}{\left(n-r\right)!}$$
+\end{theorm}
+
+Case where order doesn't matter, and repetition is not allowed.
+
+\begin{example}
+    In how many ways can $5$ students be selected from a class of $15$ to form a committee?
+
+    If we assume order did matter, we would count as in case 2, to get $$15\cdot 14\cdot 13\cdot 12\cdot 11 = 360360$$
+
+    But order does not matter, and each set of students was counted $5! = 120$ times, so the actual number of choices is $$\frac{360360}{120} = 3003$$
+\end{example}
+
+\begin{definition}
+    Let $n$ and $r$ be non-negative integers with $r\leq n$. An \underline{r-combination} of a set of $n$ elements is a subset of $r$ of the $n$ elements. The number of $r$-combinations of a set of $n$ elements is denotes $C(n,r)$ or $nCr$ or, more commonly, $\left(^n_r\right)$ which is read ``$n$ choose $r$''.
+\end{definition}
+
+\begin{theorm}
+    If $n$ and $r$ are non-negative integers and $r\leq n$, then $$\left(^n_r\right) = \frac{P(n,r)}{r!} = \frac{n!}{r!(n-r)!}$$
+\end{theorm}
+
+Case where order does not matter, and repetition is allowed.
+
+\begin{example}
+    Suppose a store has 4 large buckets, each with a different type of coloured candy: red, blue, yellow, pink. If you must select a total of $7$ candies, how many different choices do you have?
+
+    Select $7$ elements from $\{r,\,b,\,y,\,p\}$ (repetition allowed) where order doesn't matter (i.e. ``rrbbyyy'' is the same as ``ryrybby'')
+
+    Answer = $120$.
+\end{example}
+
+\newpage
+\begin{example}
+    How many permutations of the letters ``ALFALFA'' are there?
+
+    Method (1).
+    \begin{itemize}
+        \item select positions for the 3 A's
+        \item select positions for the 2 F's
+        \item put the 2 L's in the remaining positions
+    \end{itemize}
+
+    Answer: $$\left(^7_3\right) \cdot \left(^4_2\right) \cdot 1 = 35 \cdot 6 = 210$$ note the $1$ is really $\left(^2_2\right) = 1$
+
+
+    Method (2). if the letters were distinct, $$A_1 A_2 A_3 F_1 F_2 L_1 L_2$$ there would be $7! = 5040$ possiblities. Now, make the 3 A's indistinguishable. We have counted $$A_1 F_1 F_2 L_2 L_1 A_2 A_3$$ and $$A_2 F_1 F_2 L_2 L_1 A_1 A_3$$ as different solutions, so we have over counted by $3! = 6$ times. Thus, $\frac{5040}{6} = 840$ possible solutions.
+
+    Now make the 2 F's indistinguishable: we have over counted by $2$ times, so we have $\frac{840}{2!} = 420$ possible solutions. Finally, make the 2 L's indistinguishable: we have over counted by $2!$ times, so we have $\frac{420}{2!} = 210$ possible solutions.
+\end{example}
+
+\begin{theorm}
+    Suppose you have $n$ objects of which $n_1$ are if type $1$, $n_2$ are of type $2$, etc. The number of distinct permutations of the $n$ objects is $$\left(^n_{n_1}\right)\left(^{n-n_1}_{n_2}\right)\left(^{n-n_1-n_2}_{n)3}\right)\dots\left(^{n-n_1-n_2-\dots -n_{k-1}}_{n_k}\right) = \frac{n!}{n_1!n_2!\dots n_k!}$$
+\end{theorm}
+
+\subsection{Inclusion and Exclusion}
+\begin{example}
+    In a fishtank, there are $14$ blue fish, $7$ striped fish, and $4$ fish that are both blue and striped. How many fish are blue or striped?
+
+    If we add the blue fish and the striped fish, we get $14+7=21$. However, we counted the blue striped fish twice (once for being blue, once for being striped), so the actual answer is $(14+7)-4=17$.
+\end{example}
+
+\begin{theorm}
+    Let $A$ and $B$ be disjoint finite sets, the $|A\cup B| = |A| + |B|$
+\end{theorm}
+
+More generally,
+\newpage
+\begin{theorm}
+    For any finite sets $A$ and $B$, $|A\cup B| = |A|+|B| - |A\cap B|$
+\end{theorm}
+
+\begin{definition}
+    The \underline{Inclusion/Exclusion Principle} (for $2$ or $3$ sets)...
+
+    If $A$, $B$, $C$ are any finite sets, then
+    $$|A\cup B| = |A| + |B| - |A\cap B|$$
+    and
+    $$|A\cup B\cup C| = |A| + |B| + |C| - |A\cap B| - |A\cap C| - |B\cap C| + |A\cap B\cap C|$$
+\end{definition}
+
+\subsection{Pigeonhole Principle}
+\begin{definition}
+    \underline{The Pigeonhole Principle}: Suppose you have $n$ pigeons sitting in $k$ pigeonholes. If $n > k$, then at least one of the pigeonholes contains at least two pigeons.
+
+    \begin{example}
+        5 pigeons, 4 holes, at least 1 hole must have more than 1 pigeon.
+    \end{example}
+
+    Equivalently, a function from a finite set to a smaller finite set cannot be one-to-one.
+\end{definition}
+
+The \underline{contrapositive} of the pigeonhole principle is: Suppose you have $n$ pigeons sitting in $k$ pigeonholes. If each pigeonhole contains at most one pigeon, then $n\leq k$.
+
+\begin{example}
+    If you have $3$ different colours in your drawer, what is the minimum number of socks you need to pull out in order to guarantee a matching pair?
+
+    Think of pigeons = socks, pigeonholes = colours. Pull out $4$ socks to guarantee that at least two of them have the same colour.
+\end{example}
+
+\begin{example}
+    There are $680$ people in a list. Must there be at least two people on the list with the same first and last initials? Explain.
+
+    pigeons = people, pigeonholes = initials.
+
+    There are $26\cdot 26 = 676$ possible options for first and last initials. Since $680 > 676$, the pigeonhole principle implies at least 2 people must have the same initials.
+\end{example}
+\newpage
+\begin{definition}
+    \underline{The generalised pigeonhole principle}
+
+    Suppose you have $n$ pigeons sitting in $k$ pigeonholes. If $n>k\cdot m$, then at least one of the pigeonholes contains at least $m+1$ pigeons.
+
+    Contrapositive: suppose you have $n$ pigeons sitting in $k$ pigeonholes. If each pigeonhole contains at most $m$ pigeons, then $n\leq km$.
+\end{definition}
+
+\begin{example}
+    Show that in a group of $25$ people, at least $3$ must be born in the same month.
+
+    Let $n=25$ and $m=2$.
+
+    We have $25$ pigeons (people) and $12$ pigeonholes (months).
+
+    Since $n > 12\cdot 2$, the generalised pigeonhole principle implies that there is a month which $\geq 3$ people from the group have a birthday.
+\end{example}

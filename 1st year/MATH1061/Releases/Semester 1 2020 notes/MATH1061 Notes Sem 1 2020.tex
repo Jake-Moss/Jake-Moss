@@ -1,0 +1,168 @@
+% wk 7 notes are incomplete
+% lec 23
+% wk 9
+% expand upon Groups, Counting, Graphs
+
+\documentclass{article}
+
+
+
+% \usepackage{amsmath}
+\usepackage{graphicx} \graphicspath{{./assets/}}
+\usepackage{float} \restylefloat{table}
+% \usepackage{amssymb}
+% \usepackage{amsmath}
+% \usepackage{amsthm}
+\usepackage{multicol}
+\usepackage{arydshln}
+\usepackage[top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+% \usepackage{mathtools}
+\usepackage[super]{nth}
+
+% \input{/home/jake/Uni/LaTeX files/Preamble.tex}
+
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+% \usepackage[margin=15mm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+% \usepackage{graphicx}
+\usepackage{tcolorbox}
+\usepackage[final]{pdfpages}
+% \usepackage{gauss}
+\usepackage{relsize}
+\usepackage{etoolbox}
+% \usepackage[en-GB,showzone=false]{datetime2}
+% \setlength\parindent{0pt}
+\usepackage{parskip}
+
+% From Toms preamble
+\usepackage[framemethod=TikZ]{mdframed}
+\usepackage{float} \restylefloat{table}
+% \definecolor{peach}{RGB}{255,218,185} % Custom colours
+
+\usepackage{hyperref}
+
+\newcommand{\ts}{\textsuperscript}
+
+
+
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+\setcounter{tocdepth}{2}
+
+
+\setlength{\dashlinedash}{1pt}
+\setlength{\dashlinegap}{2pt}
+\setlength{\arrayrulewidth}{0.2pt}
+
+
+\theoremstyle{definition}
+% \newtheorem*{definition}{Definition}
+% \newtheorem*{example}{Examples}
+% \newtheorem*{theorm}{Theorm}
+\newtheorem*{remark}{Remark}
+\newtheorem*{observation}{Observation}
+\newtheorem*{proposition}{Proposition}
+
+
+% THEOREM
+\newenvironment{theorm}[1][]{%
+\vspace{3mm}
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20, rounded corners=0.8mm]
+{\strut Theorem};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=blue!20, rounded corners=0.8mm]
+{\strut Theorem:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=blue!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+
+% definition
+\newenvironment{definition}[1][]{%
+\vspace{3mm}
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=green!20, rounded corners=0.8mm]
+{\strut Definition};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=green!20, rounded corners=0.8mm]
+{\strut Definition:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=green!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+
+% example
+\newenvironment{example}[1][]{%
+\vspace{3mm}
+\ifstrempty{#1}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=orange!20, rounded corners=0.8mm]
+{\strut Example};}}
+}%
+{\mdfsetup{%
+frametitle={%
+\tikz[baseline=(current bounding box.east),outer sep=0pt]
+\node[anchor=east,rectangle,fill=orange!20, rounded corners=0.8mm]
+{\strut Example:~#1};}}%
+}%
+\mdfsetup{innertopmargin=10pt,linecolor=orange!20,%
+linewidth=2pt,topline=true,%
+frametitleaboveskip=\dimexpr-\ht\strutbox\relax
+}
+\begin{mdframed}[]\relax%
+}{\end{mdframed}}
+
+% \newenvironment{example}{
+% \begin{tabular}{:p{0.9\textwidth}:}
+%     \hdashline\\\textbf{Ex.}
+%     }
+%     {
+%     \\\\\hdashline
+%     \end{tabular}
+% }
+
+\setlength{\parindent}{0pt}
+
+\author{Tom Stephen, Edited by Ben Kruger, Stylised by Jake Moss}
+\title{\vspace{-15mm} MATH1061 - Course Notes}
+
+\begin{document}
+
+\maketitle 
+\tableofcontents
+
+\newpage
+\include{logic}
+\include{numbers}
+\include{recursive}
+\include{functions}
+\include{set_theory}
+\include{groups}
+\include{counting}
+\include{graph_theory}
+\end{document}
+

@@ -1,0 +1,47 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (0, 10) {};
+		\node [style=none] (2) at (4, 0) {};
+		\node [style=none] (3) at (7.5, 0) {};
+		\node [style=none] (4) at (10, 0) {};
+		\node [style=none] (5) at (14, 0) {};
+		\node [style=none] (6) at (16, 0) {};
+		\node [style=none] (7) at (4, 4.75) {};
+		\node [style=none] (8) at (14, 8) {};
+		\node [style=none] (9) at (7.5, 5.75) {};
+		\node [style=none] (10) at (10, 8.25) {};
+		\node [style=none] (11) at (0, 8.25) {};
+		\node [style=none] (12) at (0, 5.75) {};
+		\node [style=none] (13) at (8.75, 0) {\((~~~~~~~~~~~~~~~)\)};
+		\node [style=none] (14) at (7.5, -0.75) {\(x\)};
+		\node [style=none] (15) at (10, -0.75) {\(y\)};
+		\node [style=none] (16) at (4, -0.75) {\(a\)};
+		\node [style=none] (17) at (14, -0.75) {\(b\)};
+		\node [style=none] (18) at (-1.25, 7) {\(\geq \varepsilon_0 \left\{ \right. \)};
+		\node [style=none] (19) at (-0.25, 8.25) {};
+		\node [style=none] (20) at (-0.25, 5.75) {};
+		\node [style=none] (21) at (4, -0.25) {};
+		\node [style=none] (22) at (14, -0.25) {};
+		\node [style=none] (23) at (7.5, -0.25) {};
+		\node [style=none] (24) at (10, -0.25) {};
+		\node [style=none] (26) at (8.75, 1.25) {\(\overbrace{~~~~~~~~~~~~~~~}^\delta\)};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=Thick arrow line] (1.center) to (0.center);
+		\draw [style=Thick arrow line] (6.center) to (0.center);
+		\draw [in=150, out=0, looseness=1.50] (7.center) to (8.center);
+		\draw [style=Dashed line] (7.center) to (2.center);
+		\draw [style=Dashed line] (8.center) to (5.center);
+		\draw [style=Red line] (11.center) to (10.center);
+		\draw [style=Red line] (10.center) to (4.center);
+		\draw [style=Red line] (3.center) to (9.center);
+		\draw [style=Red line] (9.center) to (12.center);
+		\draw (11.center) to (19.center);
+		\draw (20.center) to (12.center);
+		\draw (2.center) to (21.center);
+		\draw (3.center) to (23.center);
+		\draw (4.center) to (24.center);
+		\draw (5.center) to (22.center);
+	\end{pgfonlayer}
+\end{tikzpicture}

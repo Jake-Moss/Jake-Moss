@@ -1,0 +1,159 @@
+% \begin{multicols}{2}
+% \end{multicols}
+\section{Number Theory}
+\subsection{Modulo Arithmetic}
+\subsubsection{Floor and Ceiling}
+\begin{definition}
+	Given any $x\in\mathbb R$, the floor of $x$, denoted $\floor{x}$, is the unique integer $n$ such that $n \leq x < n + 1$
+
+	Given any $x\in\mathbb R$, the ceiling of $x$, denoted $\ceil{x}$, is the unique integer $n$ such that $n-1 < x \leq n$
+\end{definition}
+
+\subsection{Euclidean Algorithm}
+\begin{definition}
+    For integers $a,b\in\mathbb Z$, not both zero, the \underline{greatest common divisor} of $a$ and $b$, denoted $\text{gcd}\left(a,b\right)$, is the integer $d$ which satisfies the following two properties:
+    \begin{itemize}
+        \item $d|a$ and $d|b$
+        \item for all $c\in\mathbb Z$, if $c|a$ and $c|b$, then $c\geq d$
+    \end{itemize}
+    Thus $d$ is the largest integer for which $d|a$ and $d|b$
+\end{definition}
+
+If $\text{gcd}\left(a,b\right) = 1$ then $a$ and $b$ have no common factors other than $\pm 1$ and we call $a$ and $b$ co-prime or relatively prime.
+
+\textbf{Fact}: If $a$ and $b$ are integers with $b\neq 0$ and if $q$ and $r$ are integers such that $$a = bq + r$$ then $$\text{gcd}\left(a,b\right) = \text{gcd}\left(b,r\right)$$
+
+\begin{definition}
+    The Euclidean Algorithm: to find $\text{gcd}\left(a,b\right)$ where $a,b\in\mathbb Z$ and $a\geq b>0$,
+    \begin{itemize}
+        \item write $a=bq+r$, as in the quotient-remainder theorem
+        \item if $r=0$, then terminate with $\text{gcd}\left(a,b\right)=b$
+        \item otherwise replace $\left(a,b\right)$ with $\left(b,r\right)$ and repeat
+    \end{itemize}
+\end{definition}
+
+\begin{definition}
+    For non-zero integers $a,b\in\mathbb Z$, the \underline{lowest common multiple} of $a$ and $b$ is the smallest positive integer $n$ for which $a|n$ and $b|n$. We write this as $\text{lcm}\left(a,b\right)$
+\end{definition}
+
+\textbf{Fact}: suppose $a,b\in\mathbb{Z}$ where $a\geq b > 0$. Then $$\text{gcd}\left(a,b\right)\cdot\text{lcm}\left(a,b\right) = a\cdot b$$
+
+\newpage
+\subsection{Sequences}
+\begin{definition}
+    A \underline{sequence} is an ordered list of elements. It can be infinite or finite. Each individual element is called a \underline{term}. We often denote the terms of sequences by lower case letters with subscripts.
+\end{definition}
+
+An \underline{explicit formula} or \underline{general formula} for a sequence is a rule showing how the value of a general term $a_k$ depends upon $k$.
+
+\begin{example}
+$$1,2,3,4,5,\dots$$
+The listed terms $a_0, a_1, a_2, \dots$ follow a pattern, where $a_k = 2^k$.
+
+Different notations are used to denote such a sequence, such as $$\left\{2^k\right\}_{k\geq 0}\,\text{or}\,\left\{2^k\right\}^\infty_{k=0}\,\text{or}\,\left(2^k\right)_{k\geq 0}\,\text{or}\,\left(2^k\right)^\infty_{k=0}$$
+\end{example}
+
+\begin{example}
+    Write the first 5 terms of $\left\{\frac{\left(-1\right)^n}{n}\right\}_{n\geq 1}$
+
+    $$a_1 = -1,\, a_2 = \frac12,\, a_3 = -\frac13,\, a_4 = \frac14,\, a_5 = -\frac15$$
+\end{example}
+
+\begin{definition}
+    An \underline{alternating sequence} is a sequence in which the terms alternate between positive and negative, such as the previous example.
+\end{definition}
+
+It is often useful to find a general term from initial terms.
+
+\begin{example}
+    Find a general formula for a sequence that has the following initial terms
+
+    $$2,\, \frac34,\, \frac49,\, \frac{5}{16},\, \frac{6}{25},\, \frac{7}{36},\dots$$
+
+    Let $a_n$ denote the general term and suppose the initial term is $a_1$. Observe that the denominator of each term is a perfect square and we can rewrite the terms as
+
+    $$\frac{1+1}{1^2},\, \frac{2+1}{2^2},\, \frac{3+1}{3^2},\, \frac{4+1}{4^2},\, \frac{5+1}{5^2},\, \frac{6+1}{6^2},\dots$$
+
+    Thus, the general term $$a_n = \frac{n+1}{n^2}$$ or, the sequence $\left\{\frac{n+1}{n^2}\right\}_{n\geq 1}$ has the given initial terms.
+\end{example}
+
+\subsection{Summation Notation}
+We use greek capital Sigma $\Sigma$ to indicate a sum. If $m,n\in\mathbb Z$ and $m\leq n$, then $$\sum_{i=m}^n a_i = a_m + a_{m+1} + \dots + a_{n-1} + a_n$$
+
+\subsection{Dummy Variable}
+\begin{example}
+    The variable $i$ in $\sum a_i$ is a \underline{dummy variable}. You can use any letter here, as long as it does not have another meaning.
+\end{example}
+
+\subsection{Product Notation}
+We use greek capital Pi $\Pi$ to indicate a product. If $m,n\in\mathbb Z$ and $m\leq n$, then $$\prod_{i=m}^n a_i = a_m\cdot a_{m+1}\cdot\dots\cdot a_{n-1}\cdot a_n$$
+
+\subsection{Factorial}
+For $n\in\mathbb Z^+$, we define $n!$ (read ``$n$ factorial'') to be $$n! = n(n-1)(n-2)\cdot\dots\cdot 3\cdot 2\cdot 1 = \prod_{i=1}^n$$ also, $0!=1$
+
+\subsection{Properties of Summation and Product Notation}
+If $a_m,\, a_{m+1},\, a_{m+2},\,\dots$ and $b_m,\, b_{m+1},\, b_{m+2},\,\dots$ are sequences of real numbers, and $c$ is any real number, then, for any integer $n\geq m$, the following hold.
+
+\begin{enumerate}
+    \item $\displaystyle\sum_{i=m}^n a_i \pm \sum_{i=m}^n b_1 = \sum_{i=m}^n a_i \pm b_i$
+    \item $\displaystyle\sum_{i=m}^n ca_i = c\sum_{i=m}^n a_i$
+    \item $\displaystyle\left(\prod_{i=m}^n a_i\right)\left(\prod_{i=m}^n b_1\right) = \prod_{i=m}^n a_ib_i$
+\end{enumerate}
+
+\newpage
+\subsection{Mathematical Induction}
+\begin{definition}
+    The Principle of Mathematical Induction.
+
+    Let $P(n)$ be a predicate that is defined for every integer $n\geq a$, where $a$ is some fixed integer. Suppose \begin{enumerate}
+        \item $P(a)$ is true.
+        \item For every integer $k\geq a$, $P(k)\rightarrow P(k+1)$
+    \end{enumerate}
+    Then $P(n)$ is true for every integer $n\geq a$
+\end{definition}
+
+\subsubsection{Strong Mathematical Induction}
+\begin{definition}
+	The Principle of Strong Mathematical Induction.
+
+	Let $P(n)$ be a predicate that is defined for every integer $n\geq a$, where $a$ is some fixed integer, and let $b$ be an integer where $b\geq a$. Suppose:
+	\begin{itemize}
+		\item \emph{Base step}: $P(a),\,P(a+1),\,\dots,\,P(b)$ are all true
+		\item \emph{Inductive Step}: For every integer $x \geq b$, if $P(a), \, P(a + 1),\,\dots,\, P(k)$ are all true, then $P(k+1)$ is true.
+	\end{itemize}
+	The $P(n)$ is true for every integer $n\geq a$.
+\end{definition}
+
+
+Prove that for every integer $n \geq 8$, we can form $n$ cent postage using only 3c and/or 5c stamps.
+
+Before starting a proof, we observe:
+\begin{align*}
+	8 &= 5 + 3 \rightarrow 11 = (5 + 3) + 3 \\
+	9 &= 3 + 3 + 3 \rightarrow 12 = (3 + 3 + 3) + 3 \\
+	10 &= 5 + 5 \rightarrow 13 = (5+5)+3
+\end{align*}
+We can now use this idea in a formal proof.
+\begin{proof}
+	Let $P(n)$ be the predicate ``$n$ cent postage can be formed using only 3c and/or 5c stamps''
+
+	\emph{Basis Step}: We can prove $P(8),\,P(9),\,P(10)$ direction, since
+	\begin{align*}
+		8 &= 5 + 3 \\
+		9 &= 3 + 3 + 3 \\
+		10 &= 5 + 5
+	\end{align*}
+
+	\emph{Inductive Hypothesis}: Suppose that for some integer $k \geq 10$, $P(8),\,\dots,\,P(k)$ are all true. We will use this to prove $P(k+1)$.
+
+	Since $k\geq 10$, we have $k - 2 \geq 8$. Thus, by the Inductive Hypothesis, we can form $(k-2)c$ using 3c and 5c stamps. Now we can add 1 more 3c stamp to make $(k+1)c$ postage and so $P(k+1)$ is true.
+
+	Therefore, by strong induction, it follows that $P(n)$ is true for every integer $n\geq 8$.
+\end{proof}
+\newpage
+\subsubsection{Well Ordering Principle}
+\begin{definition}
+	The \emph{Well Ordering Principle} for the integers.
+
+	If $S$ is a non-empty set of integers, all of which are greater than some fixed integer, then $S$ has a least element.
+\end{definition}

@@ -1,0 +1,1256 @@
+\documentclass[12pt]{report}
+% ,hidelinks
+
+\input{/home/jake/Uni/LaTeX files/Preamble.tex}
+
+\renewcommand{\thesection}{\hspace{5pt} \arabic{section}.}
+
+\begin{document}
+    \author{Jake Moss - s46409665}
+    \title{MATH1071: Complete final theorem list}
+    
+    \date{\parbox{\linewidth}{\centering%
+        \text{Last edited - }\DTMnow \endgraf\vspace{150mm}
+        \textit{Two theorems a day keeps the HECS debt at bay.}}}   
+    \maketitle
+
+    \tableofcontents{}
+
+    \mychapter{0}{Sequences}
+    \section{Squeeze Theorem}
+    \textit{``The squeeze theorem for sequences."} \vspace{3mm}
+    \begin{theorem}[Squeeze Theorem]
+        Suppose \(\left(a_n\right)^\infty _{n=1}\), \(\left(b_n\right)^\infty _{n=1}\), \(\left(c_n\right)^\infty _{n=1}\) are such that
+        \begin{enumerate}
+            \item \[a_n \leq b_n \leq c_n \qquad \forall n \in \mathbb{N}\]
+
+            \item \[\limtoinfinity{n} a_n = \limtoinfinity{n} c_n = L\]
+        \end{enumerate}
+
+        Then,
+        \[\limtoinfinity{n} b_n = L\]
+    \end{theorem}
+    \begin{proof}
+        Observe that,
+        \begin{align*}
+            \abs{b_n - L} &= \abs{\left(b_n - a_n\right) + \left(b_n - L\right)}\\
+            & \leq \abs{b_n - a_n} + \abs{a_n - L}\\
+            &= b_n - a_n + \abs{a_n - L}\\
+            &\leq c_n - a_n + \abs{a_n - L}\\
+            &= \abs{\left(c_n - L\right) + \left(L - a_n\right) + \abs{a_n - L}}\\
+            & \leq \abs{c_n - L }+ \abs{L - a_n} + \abs{a_n - L}
+        \end{align*}
+        Fix \(\varepsilon > 0\). There exists \(N_1 \in \mathbb{N}\) such that \(n_1 \geq N_1\),
+
+        Then,
+        \[\abs{a_n - L} = \abs{L - a_n } < \frac{\varepsilon}{3}\]
+        Also there exists \(N_2 \in \mathbb{N}\) such that \(n_2 \geq N_2\)
+
+        Then,
+        \[\abs{c_n - L} < \frac{\varepsilon}{3}\]
+        Now set \(N = \max \{N_1, N_2\}\), if \(n \geq N\)
+        
+        Then, \[\abs{b_n - L} \leq \abs{c_n - L} + \abs{L - a_n} + \abs{a_n - L} < \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} = \varepsilon\]
+
+    \end{proof}
+
+    \section{Convergence of a bounded sequence}
+    \label{Convergence of a bounded sequence}
+    \textit{``The theorem about the boundedness of a convergent sequence."} \vspace{3mm}
+    \begin{theorem}[Convergence of a bounded sequence]
+        If \(\left(a_n\right)^\infty _{n=1}\) converges, then there exists \(M > 0\) such that \(\abs{a_n} \leq M\) for all \(n \in \mathbb{N}\).
+    \end{theorem}
+    \begin{proof}
+        Assume \(\limtoinfinity{n} a_n = L\) for every \(\varepsilon > 0\), there exists \(N \in \mathbb{N}\) such that if \(n \geq N\) then,
+        \[\abs{a_n - L} < \varepsilon\]
+        This holds for instance if \(\varepsilon = 1\). Thus there exists \(N_1 \in \mathbb{N}\) such that if \(n \geq N_1\) then,
+        \[\abs{a_n - L } < 1\]
+        By the second triangle inequality,
+        \[\abs{a_n} - \abs{L} < 1\]
+        \[\abs{a_n} < 1+ \abs{L}\]
+        Now, 
+        \[\abs{a_n} \leq M = \max \{\abs{a_1},~ \abs{a_2},~ \abs{a_3}, ~ ... ~,~ \abs{a_{n-1}}, \abs{L} + 1  \}\]
+        For all \(n \in \mathbb{N}\)\\
+    \end{proof}    
+    \section{Convergence of a bounded, monotone sequence}
+    \label{Convergence of a bounded, monotone sequence}
+    \textit{``The theorem about the convergence of a bounded monotone sequence''} \vspace{3mm}
+    \begin{theorem}[Convergence of a bounded, monotone sequence]
+        A monotone sequence converges if and only if it is bounded.
+    \end{theorem}
+    \begin{proof}
+        A monotone sequence converges if it is bounded.
+        
+        This is already proven \hyperref[Convergence of a bounded sequence]{here}.
+    \end{proof}
+    \begin{proof}
+        If a monotone sequence is bounded, it converges.
+                
+        Assume \(\left(a_n\right)^\infty _{n=1}\) is increasing.
+        
+        Define \(\alpha = \sup \{a_1,~ a_2, \, \dots \, , ~ a_n\}\)
+
+        Since the sequence is bounded, this supremum exists in \(\mathbb{R}\).
+        \vspace{5mm}
+        \\
+        Let us show that \(\alpha = \limtoinfinity{n} a_n\)
+        
+        Choose \(\varepsilon > 0\). There exists \(N \in \mathbb{N}\) such that 
+        \[a_n \in \leftopenrightclosed{\alpha - \varepsilon, \, \alpha}\]
+        By monotonicity, if \(n \geq N\), then,
+        \[a_n \geq a_N \geq \alpha - \varepsilon\]
+        and
+        \[a_n \leq \alpha\]
+        Thus if \(n \geq N\), then,
+        \[\alpha - \varepsilon < a_n \leq \alpha < \alpha + \varepsilon\]
+        i.e.
+        \[\abs{a_n - \alpha} < \varepsilon\]
+        Therefore,
+        \[\limtoinfinity{n} a_n = \alpha\]
+    \end{proof} 
+    \section{Every sequence has a monotone subsequence.}
+    \label{Every sequence has a monotone subsequence}
+    \textit{``The theorem about the existence of a monotone subsequence.''} \vspace{3mm}
+    \begin{theorem}[Every sequence has a monotone subsequence.]
+        Every sequence of \(\mathbb{R}\) has a monotone subsequence.
+    \end{theorem}
+    \begin{proof}
+        We call \(k \in \mathbb{qR}\) a peak point of \(\left(a_n\right)^\infty _{n=1}\) if \(a_k > a_n\) for all \(n >k\).
+        
+        \underline{Case 1:}
+        There are infinitely many peak points, \(n_1 < n_2 < \dots \)
+        \vspace{5mm}
+
+        By Definition,
+        \[a_{n_1} > a_{n_2} > \dots\]
+        Thus \(\left(a_n\right)^\infty _{n=1}\) is monotone.
+        \vspace{10mm}
+
+        \underline{Case 2:}
+        There are finitely many peak points,
+        \[\{k_1, \, k_2, \, \dots , \, k_L\}\]
+        Set \(n_1 = \max \{k_1, \, k_2, \, \dots , \, k_L\} + 1\)
+
+        Clearly, \(n_1\) is not a peak point. Therefore, there exists \(n_2 > n_1\) such that \(a_{n_2} \geq a_{n_1}\). Now, \(n_2\) is not a peak point. Therefore, there exists \(n_3 > n_2\) such that \(a_{n_3} \geq a_{n_2}\). Continue in this way to obtain a monotone subsequence \(\left(a_{n_i}\right)^\infty _{i=1}\)
+    \end{proof}\newpage
+    \section{The Bolzano-Weierstrass theorem.}
+    \textit{``The Bolzano-Weierstrass theorem.''} \vspace{3mm}
+    \begin{theorem}[The Bolzano-Weierstrass theorem.]
+        Every bounded sequence has a convergent subsequence.
+    \end{theorem}
+    \begin{proof}
+        Every sequence has a monotone subsequence, proven \hyperref[Every sequence has a monotone subsequence]{here}. Every subsequence of a bounded subsequence is bounded. Thus we have a bounded monotone subsequence which must converge as per \hyperref[Convergence of a bounded, monotone sequence]{here}.
+    \end{proof}
+    \begin{remark}
+        This is called \underline{compactness.}
+    \end{remark}
+
+    \mychapter{1}{Limits}
+    \setcounter{section}{5}
+    \section{Algebraic properties of limits}
+    \textit{``The theorem about the limit of a sum, product and ratio of functions.''} \vspace{3mm}
+    \begin{theorem}[Algebraic properties of limits]
+        Given these limits,
+        \sidebyside{\[\lim _{x \to a} f(x) = L\]}{\[\lim _{x \to a} g(x) = M\]}
+        Then,
+        \begin{enumerate}
+            \item \[\hyperref[Properties of limits addition]{\lim _{x \to a} \left(f(x) + g(x)\right) = L + M}\]
+            \item \[\hyperref[Properties of limits multiplication]{\lim _{x \to a} \left(f(x) \cdot g(x)\right) = L \cdot M}\]
+            \item \[\hyperref[Properties of limits division]{\lim _{x \to a} \left(\frac{f(x)}{g(x)}\right) = \frac{L}{M} \qquad \lim _{x \to a} g(x) = M \not = 0}\]
+        \end{enumerate}
+    \end{theorem}
+    \textbf{Note:} The proof for properties 1. and 3. are constructed by me or a source outside of the lecture notes and has not been checked rigorously, thus there is no guarantee they are correct.
+    \begin{proof}[Proof of \textnormal{1.}]
+        \phantomsection
+        \label{Properties of limits addition}
+        Given these limits,
+        \sidebyside{\[\lim _{x \to a} f(x) = L\]}{\[\lim _{x \to a} g(x) = M\]}
+        Clearly,
+        \[\lim _{x \to a} f(x) = L\]
+        implies that \(\forall \, \varepsilon_1 > 0, ~ \exists \, \delta_1\) such that
+        \[0 < \abs{x-a} < \delta_1 \implies \abs{f(x) - L}< \varepsilon_1\]
+
+        Mover over,
+        \[\lim _{x \to a} g(x) = M\]
+        implies that \(\forall \, \varepsilon_2 > 0, ~ \exists \, \delta_2\) such that
+        \[0 < \abs{x-a} < \delta_2 \implies \abs{g(x) - M}< \varepsilon_2\]
+        
+        Fix \(\varepsilon > 0\). Then \(\exists \, \delta\) such that
+        \[0 < \abs{x - a} < \delta \implies \abs{\left(f(x) + g(x)\right) - \left(L-M\right)} < \varepsilon\]
+        \begin{align*}
+            \abs{\left(f(x) + g(x)\right) - \left(L-M\right)} &= \abs{\left(f(x) - L\right) + \left(g(x) - M\right)}
+            \intertext{By the triangle inequality,}
+            \abs{\left(f(x) - L\right) + \left(g(x) - M\right)} &\leq \abs{\left(f(x) - L\right)} + \abs{\left(g(x) - M\right)}
+            \intertext{From the definiton of the limits}
+            \abs{\left(f(x) - L\right)} + \abs{\left(g(x) - M\right)} &< \varepsilon_1 + \varepsilon_2
+            \intertext{Let \(\varepsilon = \varepsilon_1 + \varepsilon_2\)}
+            \abs{\left(f(x) - L\right)} + \abs{\left(g(x) - M\right)} &< \varepsilon
+            \intertext{This implies that,}
+            \lim _{x \to a} \left(f(x) + g(x)\right) &= L + M
+        \end{align*}
+    \end{proof}
+    \phantomsection
+    \label{Properties of limits multiplication}
+    \begin{proof}[Proof of \textnormal{2.}]
+        Fix \(\varepsilon > 0\). \(\exists, \, \delta > 0\) such that,
+        \[0 < \abs{x - a} < \delta \implies \abs{f(x) \cdot g(x) - L \cdot M} < \varepsilon\]
+        Observe that 
+        \begin{align*}
+            \abs{f(x) \cdot g(x) - L \cdot M} &= \abs{\abs{f(x) \cdot g(x) - f(x) \cdot M + f(x) \cdot M - L \cdot M}}\\
+            &= \abs{f(x)\left(g(x) - M\right) + M\left(f(x) - L\right)}\\
+            &\leq \abs{f(x)} \cdot \abs{g(x) - M} + \abs{M} \cdot \abs{f(x) - L}
+        \end{align*}
+        Since 
+        \[\lim _{x \to a} f(x) = L\]
+        There exists \(\delta_1 > 0\) such that,
+        \[0 < \abs{x-a} < \delta_1 \implies \abs{f(x) - L} < 1\]
+        (Limit with \(\varepsilon = 1\))
+        In this case 
+        \[\abs{f(x) - \abs{L} <}\]
+        and
+        \[\abs{f(x)} < 1 + \abs{L}\]
+        Thus if \(0 < \abs{x-a}< \delta\), then,
+        \[\abs{f(x) \cdot g(x) - L \cdot M} \leq \abs{1 + \abs{L}} \cdot \abs{g(x) - M} + \abs{M} \cdot \abs{f(x) - L}\]
+        There exists \(\delta_2 > 0\) such that,
+        \[0 < \abs{x-a} < \delta_2 \implies \abs{g(x) - M} < \frac{\varepsilon}{2\left(1 + \abs{L}\right)}\]
+        Also, there exists \(\delta_3 > 0\) such that,
+        \[0 < \abs{x-a} < \delta_3 \implies \abs{f(x) - L} < \frac{\varepsilon}{2\left(\abs{M} + 1\right)}\]
+        Set
+        \[\delta = \min\{\delta_1,\delta_2,\delta_3\}\]
+
+        \begin{align*}
+            0 < \abs{x - a} < \delta \implies \abs{f(x) \cdot g(x) - L \cdot M} &\leq \abs{1 + \abs{L}} \cdot \abs{g(x) - M} + \abs{M} \cdot \abs{f(x) - L}\\
+            &< \frac{\varepsilon}{2\left(1 + \abs{L}\right)} + \frac{\varepsilon}{2\left(\abs{M} + 1\right)}\\ 
+            &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon
+        \end{align*}
+    \end{proof}
+    \phantomsection
+    \label{Properties of limits division}
+    \begin{proof}[Proof of \textnormal{3}.]
+        The proof of this property is left as an exercise to the reader. Nah I'm just playing its right here;
+
+        For this proof, an other property will be proven and directly used.
+        \[\lim_{x \to a} \frac{1}{g(x)} = \frac{1}{M}\]
+        Fix \(\varepsilon > 0\). \(\exists \, \delta_1 > 0\) such that
+        \[0 < \abs{x-a} < \delta_1 \implies \abs{g(x) - M} < \varepsilon_1\]
+        Let \(\varepsilon = \frac{\abs{M}}{2}\)
+        \begin{align*}
+            \abs{M} &= \abs{M -g(x) + g(x)}\\
+            &\leq \abs{M -g(x)} + \abs{g(x)}\\
+            &= \abs{g(x) - M} + \abs{g(x)}\\
+            &< \frac{\abs{M}}{2} + \abs{g(x)}
+        \end{align*}
+        \begin{align*}
+            \abs{M} &< \frac{\abs{M}}{2} + \abs{g(x)}\\
+            \frac{\abs{M}}{2} &< \abs{g(x)}\\
+            \frac{1}{\abs{g(x)}} &< \frac{2}{\abs{M}} 
+        \end{align*}
+        There also exists a \(\delta_2>0\) such that
+        \[0< \abs{x-a}< \delta_2 \implies \abs{g(x) - M} < \frac{\abs{M}^2}{2} \cdot \varepsilon\]
+        Choose \(\delta = \min \{\delta_1, \delta_2\}\)
+        \[0 < \abs{x-a} < \delta\]
+        Observe that,
+        \begin{align*}
+            \abs{\frac{1}{\abs{g(x)}} - \frac{1}{\abs{M}}} &=  \abs{\frac{M - g(x)}{M \cdot g(x)}}\\
+            &= \frac{1}{\abs{M \cdot g(x)}} \cdot \abs{M - g(x)}\\
+            &= \frac{1}{\abs{M}} \cdot \frac{1}{\abs{g(x)}} \cdot \abs{g(x) - M}\\
+            &< \frac{1}{\abs{M}} \cdot \frac{2}{\abs{M}} \cdot \abs{g(x) - M}\\
+            &< \frac{2}{\abs{M}^2} \cdot \frac{\abs{M}^2}{2} \cdot \varepsilon\\
+            &= \varepsilon
+        \end{align*}
+        Therefore,
+        \[0 < \abs{x-a} < \delta \implies \lim_{x \to a} \frac{1}{g(x)} = \frac{1}{M}\]
+        A proof of the more general fact that
+        \[\lim _{x \to a} \left(\frac{f(x)}{g(x)}\right) = \frac{L}{M} \qquad \lim _{x \to a} g(x) = M \not = 0\]
+        is an elementary application of the property 2.
+        \[\lim _{x \to a} \left(f(x) \cdot g(x)\right) = L \cdot M\]
+        Which is proven \hyperref[Properties of limits multiplication]{here}.
+    \end{proof}
+
+    \mychapter{2}{Derivatives}
+    \setcounter{section}{6}
+    \section{Differentiability implies continuity}
+    \textit{``The proposition about the continuity of a differentiable function.''} \vspace{3mm}
+    \begin{theorem}[Differentiability implies continuity]
+        If \(f\) is differentiable at \(x_0\), then \(f\) is continuous at \(x_0\).
+    \end{theorem}
+    \begin{proof}
+        \begin{align*}
+            \lim_{x \to x_0} f(x) &= \lim_{x \to x_0} \left(\frac{f(x) - f(x_0)}{x-x_0}\cdot (x-x_0) + f(x_0)\right)\\
+            &= \lim_{x \to x_0} \left(\frac{f(x) - f(x_0)}{x-x_0} \cdot \lim_{x \to x_0} (x-x_0)\right) + f(x_0)\\
+            &= f(x_0 \cdot 0 +f(x_0))\\
+            &= f(x_o)
+        \end{align*}
+    \end{proof}
+
+    \newpage
+    \section{Algebraic properties of derivatives.}
+    \textit{``The theorem about the derivative of a sum, product and ratio.''} \vspace{3mm}
+    \begin{theorem}[Algebraic properties of derivatives]
+        Suppose \(f,g ~ (a,b) \to \mathbb{R}\) are differentiable at \(x \in (a,b)\) then,
+        \sidebysidebyside{\[f+g\]}{\[f\cdot g\]}{\[\frac{f}{g}\]}
+        are differentiable at \(x\).
+        \\
+        More over,
+        \begin{enumerate}
+            \item \[\hyperref[Addition of derivatives]{\left(f + g\right)' (x) = f'(x) + g'(x)}\]
+            \item \[\hyperref[Multiplication of derivatives]{\left(f \cdot g\right)'(x) = f'(x) \cdot g(x) + f(x) \cdot g'(x)}\]
+            \item \[\hyperref[Division of derivatives]{\left(\frac{f}{g}\right)'(x) = \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}}\]
+            Provided \(g(x) \not =0\)
+        \end{enumerate}
+    \end{theorem}
+    \textbf{Note:} The proof for properties 1. and 3. are constructed by me or a source outside of the lecture notes and has not been checked rigorously, thus there is no guarantee they are correct.
+
+    \phantomsection
+    \label{Addition of derivatives}
+    \begin{proof}[Proof of \textnormal{1.}]
+        \begin{align*}
+            \left(f + g\right)' (x) &= \lim_{h \to 0} \frac{\left(f(x+h) + g(x+h)\right) - \left(f(x) + g(x)\right)}{h}\\
+            &= \lim_{h \to 0} \frac{\left(f(x+h) - f(x)\right) + \left( g(x+h) - g(x)\right)}{h}\\
+            &= \lim_{h \to 0} \frac{\left(f(x+h) - f(x)\right)}{h} + \lim_{h \to 0} \frac{\left(g(x+h) - g(x)\right)}{h}\\
+            &= f'(x) + g'(x)
+        \end{align*}
+    \end{proof}
+    \phantomsection
+    \label{Multiplication of derivatives}
+    \begin{proof}[Proof of \textnormal{2.}]
+        \begin{align*}
+            \left(f\cdot g\right)'(x) &= \lim_{h \to 0} \frac{f(x+h)\cdot g(x+h) - f(x) \cdot g(x)}{h}\\
+            &= \lim_{h \to 0} \frac{f(x+h)\cdot g(x+h) - f(x+h)\cdot g(x) + f(x+h)\cdot g(x) - f(x) \cdot g(x)}{h}\\
+            &= \lim_{h \to 0} f(x+h) \cdot \lim_{h \to 0} \frac{g(x+h) - g(x)}{h} + g(x) \cdot \lim_{h \to 0} \frac{f(x+h)- f(x)}{h}\\
+            &= f(x) \cdot g'(x) + f'(x)\cdot g(x)
+        \end{align*}
+    \end{proof}
+    \phantomsection
+    \label{Division of derivatives}
+    \begin{proof}[Proof of \textnormal{3.}]
+        \begin{align*}
+            \left(\frac{f}{g}\right)'(x) &= \lim_{h \to 0} \frac{\frac{f(x+h)}{g(x+h)} - \frac{f(x)}{g(x)}}{h}\\
+            &= \lim_{h \to 0} \left(\frac{1}{h} \cdot \frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{{g\left( {x + h} \right)g\left( x \right)}}\right)\\
+            &= \lim_{h \to 0} \left( \frac{1}{h} \cdot \frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( x \right) + f\left( x \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{{g\left( {x + h} \right)g\left( x \right)}}\right)\\
+            &= \lim_{h \to 0} \left(\frac{1}{{g\left( {x + h} \right)g\left( x \right)}} \cdot \frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( x \right) + f\left( x \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{h}\right)\\
+            &= \lim_{h \to 0} \left(\frac{1}{{g\left( {x + h} \right)g\left( x \right)}} \cdot \left( {\frac{{f\left( {x + h} \right)g\left( x \right) - f\left( x \right)g\left( x \right)}}{h} + \frac{{f\left( x \right)g\left( x \right) - f\left( x \right)g\left( {x + h} \right)}}{h}} \right)\right)\\
+            &= \lim_{h \to 0} \left(\frac{1}{{g\left( {x + h} \right)g\left( x \right)}} \cdot \left( {g\left( x \right)\frac{{f\left( {x + h} \right) - f\left( x \right)}}{h} - f\left( x \right)\frac{{g\left( {x + h} \right) - g\left( x \right)}}{h}} \right)\right)
+            \shortintertext{Evaluating the individual limits}
+            &= \frac{f'(x) \cdot g(x) - f(x) \cdot g'(x)}{[g(x)]^2}
+        \end{align*}
+    \end{proof}
+    \section{Rolle's theorem}
+    \label{Rolle's theorem}
+    \textit{``Rolle's theorem.''} \vspace{3mm}
+    \begin{theorem}[Rolle's theorem]
+        \(f: [a,b] \to \mathbb{R}\) is continuous on \([a,b]\) and differentiable on \((a,b)\). If \(f(a) = f(b)\), then there exists \(c \in (a,b)\) such that  \(f'(c) = 0\)
+    \end{theorem}
+    \begin{proof} ~
+        \ctikzfig{Rolle's theorem Case 1}
+        If \(f(x) = f(a) \, \forall x \in (a,b)\) then the theorem is obvious.
+
+        \ctikzfig{Rolle's theorem Case 2}
+        Assume \(f\) is not constant. Without loss of generality assume there exists \(x_0 \in (a,b)\) such that \(f(x_0) < f(a)\). In this case, a single argument can be made. By the extreme value theorem, \(f\) has a global max on \([a,b]\). Call it \(c\).
+
+        Since \(f(c) \geq f(x_0) > f(a) = f(b)\) we know \(c \not = a, c \not = b\)
+        
+    \end{proof} \newpage
+    \section{Mean value theorem}
+    \label{Mean value theorem}
+    \textit{``The mean value theorem.''} \vspace{3mm}
+    \begin{theorem}[Mean value theorem]
+        Suppose \(f: [a,b] \to \mathbb{R}\) is continuous on \([a,b]\) and differentiable on \((a,b)\).
+
+        Then there exists \(c \in (a,b)\) such that
+        \[f'(c) = \frac{f(b) - f(a)}{b-a}\]\(f: [a,b] \to \mathbb{R}\) is continuous on \([a,b]\) and differentiable on \((a,b)\).
+
+        \ctikzfig{Mean value theorem graph}
+    \end{theorem}
+    \begin{proof}
+        Consider the function   
+        \[\phi (x) = f(x) - f(a) - \frac{f(b) - f(a)}{b-a} \cdot (x-a)\]
+        Observe that,
+        \begin{align*}
+            \phi (a) &= f(a) - f(a) - \frac{f(b) - f(a)}{b-a} \cdot (a-a)\\
+            &= 0\\
+            \phi (b) &= f(b) - f(a) - \frac{f(b) - f(a)}{b-a} \cdot (b-a)\\
+            &= 0
+        \end{align*}
+        Applying Rolle's theorem proven \hyperref[Rolle's theorem]{here}, to \(\phi (x)\), we obtain the existence of \(c \in (a,b)\) such that
+        \[\phi ' (c) = f'(c) - \frac{f(b)- f(a)}{b-a} = 0\]
+        Therefore,
+        \[f'(c) = \frac{f(b)- f(a)}{b-a} = 0\]
+    \end{proof}\newpage
+    \section{Vanishing derivative implies constant function}
+    \textit{``The fact that a function with vanishing derivative must be constant.''} \vspace{3mm}
+    \begin{theorem}[Vanishing derivative implies constant]
+        If \(f'(x) = 0\) on \((a.b)\), then \(f\) is a constant on \([a,b]\).
+    \end{theorem}
+    \begin{proof}
+        Take \(x \in (a,b)\), using the \hyperref[Mean value theorem]{mean value theorem} we can concluded that
+        \[f(x) - f(a) = f'(c) \cdot (x-a)\]
+        for some \(c \in (a,b)\).
+
+        Therefore,
+        \[f(x) = f(a) \qquad \forall \, a \in [a,b]\]
+        \[f(x) - f(a) = 0 \cdot (x-a)\]
+    \end{proof}
+    \mychapter{3}{Continuity}
+    \setcounter{section}{11}
+    \section{Continuity on a closed, bounded, interval implies uniform continuity}
+    \textit{``The theorem about the uniform continuity of a continuous function on an interval.''} \vspace{3mm}
+    \begin{theorem}[Continuity on a closed, bounded, interval implies uniform continuity]
+        Suppose \(f\) is continuous on a closed, bounded, interval \([a,b]\). Then \(f\) is uniformly continuous on \([a,b]\).
+    \end{theorem}
+    \begin{proof}
+        This is a proof by contradiction. Assume that \(f\) is \underline{not} uniformly continuous. Then there exists some \(\varepsilon_0 > 0\) such that for all \(\delta > 0\) there exists \(x,y \in [a,b]\) such that
+        \[\abs{x-y} < \delta \text{ but } \abs{f(x) - f(y)} \geq \varepsilon_0\]
+        \ctikzfig{Character building theorem}
+        Take \(\delta = 1\). There exists \(x_1, y_1 \in  [a,b]\) such that 
+        \[\abs{x_1 - y_1} < 1 \text{ but } \abs{f(x_1) - f(y_1)} \geq \varepsilon_0\]
+        Take \(\delta = \frac{1}{2}\). There exists \(x_2, y_2 \in  [a,b]\) such that 
+        \[\abs{x_2 - y_2} < \frac{1}{2} \text{ but } \abs{f(x_2) - f(y_2)} \geq \varepsilon_0\]
+        Continue on this was for \(\delta = \frac{1}{m}, \, m \in \mathbb{N}\)
+        Take \(\delta = \frac{1}{2}\). There exists \(x_m, y_m \in  [a,b]\) such that 
+        \[\abs{x_m - y_m} < \frac{1}{2} \text{ but } \abs{f(x_m) - f(y_m)} \geq \varepsilon_0\]
+        We have thus constructed two sequences \(\left(x_n\right)^\infty _{n=1}\) and \(\left(y_n\right)^\infty _{n=1}\) inside \([a,b]\). Since \([a,b]\) is closed and bounded, \(\left(x_n\right)^\infty _{n=1}\) must have some subsequence \(\left(x_{n_k}\right)^\infty _{k=1}\) which converges to some \(x_0 \in [a,b]\), i.e.
+        \[\limtoinfinity{k} x_{n_k} = x_0\]
+        
+        \begin{claim}
+            The subsequence \(\left(y_{n_k}\right)^\infty _{k=1}\) converges to \(x_0\).
+            \begin{proof}
+                Give \(\varepsilon >0\). We look for \(N \in \mathbb{N}\) such that if \(k \geq N\) then,
+                \begin{align*}
+                    \abs{y_{n_k} - x_0} &< \varepsilon\\
+                    \abs{y_{n_k} - x_0} &= \abs{\left(y_{n_k} - x_{n_k}\right) + \left(x_{n_k} - x_0\right)}\\
+                    &\leq \abs{y_{n_k} - x_{n_k}} + \abs{x_{n_k} - x_0}\\
+                    &\leq \frac{1}{n_k} + \abs{x_{n_k} - x_0}
+                \end{align*}
+                Since \(\left(x_{n_k}\right)^\infty _{k=1}\) converges to \(x_0\), for \(k\) large enough, we have \(\abs{x_{n_k} - x_0}< \frac{\varepsilon}{2}\). Them taking \(k\) large enough such that \(\frac{1}{n_k} < \frac{\varepsilon}{2}\), we have
+                \[\abs{y_{n_k} - x_0} < \frac{1}{n_k} + \abs{x_{n_k} - x_0} < \frac{\varepsilon}{2} + \frac{\varepsilon}{2} = \varepsilon\]
+            \end{proof}
+        \end{claim}
+
+        Let us prove that this contradicts continuity of \(f\).
+
+        Since \(f\) is continuous and some 
+        \[\limtoinfinity{k} x_{n_k} = \limtoinfinity{k} y_{n_k} = x_0\]
+        We have that
+        \[\limtoinfinity{k} f(x_{n_k}) = \limtoinfinity{k} f(y_{n_k})\]
+        Then for some \(N \in \mathbb{N}\), of \(k \geq N\) then
+        \[\abs{f(x_{n_k}) - f(x_0)} < \frac{\varepsilon}{4}\]
+        \[\abs{f(y_{n_k}) - f(x_0)} < \frac{\varepsilon}{4}\]
+        On the other hand,
+        \begin{align*}
+            \abs{f(x_{n_k}) - f(y_{n_k})} &= \abs{f(x_{n_k}) - f(x_0) + f(x_0) - f(y_{n_k})}\\
+            &\leq \abs{f(x_{n_k}) - f(x_0)} + \abs{f(x_0) - f(y_{n_k})}\\
+            &< \frac{\varepsilon}{2}
+        \end{align*}
+        and we also knew by constriction of the sequence that 
+        \[\abs{f(x_{n_k}) - f(y_{n_k})} \geq \frac{\varepsilon}{2}\]
+    \end{proof}
+    \mychapter{4}{Integration}
+    \setcounter{section}{12}
+    \section{Integrability condition}
+    \textit{``The theorem about the condition for integrability involving the inequality''} 
+    \[U(f,P) - L(f,P) < \varepsilon\]
+    \begin{theorem}[Integrability condition]
+        The function \(f: [a,b] \to \mathbb{R}\) is integrable if and only if \(\forall \varepsilon > 0\), there exists a partition \(P\) such that,
+        \[U(f,P) - L(f,P) < \varepsilon\]
+    \end{theorem}
+    \begin{proof}
+        Assume \(f\) is integrable.
+
+        Fix \(\varepsilon > 0\). There exists \(P_1\) such that 
+        \[\int^b_a f(x) \diff x  = \int ^b _{\underline{a}} f(x) \diff x < L(f,P_1) + \frac{\varepsilon}{2}\]
+        Also there exists \(P_2\) such that
+        \[\int^b_a f(x) \diff x  = \int ^{\overline{b}}_a f(x) \diff x > U(f,P_2) - \frac{\varepsilon}{2}\]
+        Define \(P = P_1 \cup P_2\) then,
+        \begin{align*}
+            U(f,P) - L(f,P) &\leq U(f,P_2) - L(f,P_1)\\
+            &< \int^b_a f(x) \diff x + \frac{\varepsilon}{2} - \int^b_a f(x) \diff x + \frac{\varepsilon}{2}\\
+            &= \varepsilon
+        \end{align*}
+    \end{proof}
+    \begin{proof}
+        Fix \(\varepsilon > 0\). There exists \(P\) such that
+        \[U(f,P) - L(f,P) < \varepsilon\]
+        Then,
+        \[\int ^{\overline{b}}_a f(x) \diff x - \int ^b _{\underline{a}} f(x) \diff x \leq U(f,P) - L(f,P) < \varepsilon\]
+        Thus,
+        \[\int ^{\overline{b}}_a f(x) \diff x - \int ^b _{\underline{a}} f(x) \diff x = 0\]
+        Therefore \(f\) is integrable.
+    \end{proof}
+    \section{A function with finitely many discontinuities is integrable}
+    \textit{``The theorem about the integrability of a function with at most finitely many discontinuities.''} \vspace{3mm}
+    \begin{theorem}[A function with finitely many discontinuities is integrable]
+        If \(f: [a,b] \to \mathbb{R}\) is continuous at all but finitely many points, then \(f\) is integrable.
+    \end{theorem}
+    \label{Part 1.}
+    \begin{proof}[Proof: Part \textnormal{1.}]
+        Assume \(f\) is continuous on \([a,b]\). Then \(f\) is uniformly continuous on \([a,b]\).
+
+        Fix \(\varepsilon > 0\). Find a partition \(P\) such that 
+        \[U(f,P) - L(f,P) < \varepsilon\]
+        This implies integrability. Uniform continuity implies that there exists \(\delta > 0 \) such that
+        \[\abs{x - y} < \delta < \abs{f(x) - f(y)} < \frac{\varepsilon}{\abs{b-a}}\]
+        Choose \(P\) such that \(\abs{x_i - x_0} < \delta\) of all \(i = 1, 2, \, \dots , n\)
+        
+        (Here, \(P = \{x_0, x_1, \, \dots, x_{n-1}\}\)) Then,
+        \[U(f,P) - L(f,P) = \sum^n _{i=1} \left( \underset{[x_{i-1}, x_i]}{\sup} f(x) - \underset{[x_{i-1}, x_i]}{\inf} f(x)\right) \left(x_i - x_{i-1}\right)\]
+        Since \(f\) is continuous, by the extreme value theorem \footnote{The extreme value theorem is not proven in this document.\\ See \url{https://en.wikipedia.org/wiki/Extreme_value_theorem}} there exists \(x^{'}_i \in [x_{i-1}, x_i]\) such that
+        \[f(x') = \underset{[x_{i-1}, x_i]}{\sup} f(x)\]
+        There also exists \(x^{''}_i \in [x_{i-1}, x_i]\) such that
+        \[f(x'') = \underset{[x_{i-1}, x_i]}{\inf} f(x)\]
+        \begin{align*}
+            U(f,P) - L(f,P) &= \sum^n _{i=1} \left( f(x') - f(x'') \right) \left(x_i - x_{i-1}\right)\\
+            &< \sum^n _{i=1} \frac{\varepsilon}{\abs{b-a}} \left(x_i - x_{i-1}\right)\\
+            &= \frac{\varepsilon}{\abs{b-a}} \left(x_1 - x_0 +x_2 - x_1 + \dots + x_n - x_{n-1}\right)\\
+            &= \frac{\varepsilon}{\abs{b-a}} \left(x_n - x_0\right)\\
+            &= \frac{\varepsilon}{\abs{b-a}} \cdot \abs{b-a}\\
+            &= \varepsilon
+        \end{align*}
+        Therefore the function in integrable.
+    \end{proof}
+    \label{Part 2}
+    \begin{proof}[Proof: Part \textnormal{2.}]
+        Assume \(f\) has exactly one discontinuity.
+
+        Assume it is at \(c \in (a,b)\), the case where it is at \(a\) or \(b\) is treated similarly.
+
+        Fix \(\varepsilon > 0\). We will find a partition \(P\) such that
+        \[U(f,P) - L(f,P) < \varepsilon\]
+        \ctikzfig{A function with finitely many discontinuities is integrable}
+        Define
+        \[\delta = \min \left\{\frac{\varepsilon}{8M}, \frac{b-c}{2}, \frac{c-a}{2}\right\}\]
+        where \(M >0\) such that \(\abs{f(x)} < M, ~ \forall x \in [a,b]\).
+
+        By our choice of \(\delta, [c - \delta, c + \delta] \subset [a,b]\). By \hyperref[Part 1.]{Part 1}, \(f\) is integrable on \([a,c -\delta]\) and \([c+\delta, b]\). Therefore there exists \(P_1\) of \([a, c - \delta]\) and \(P_2\) of \([c+ \delta, b]\) such that
+        \[U(f,P_1) - L(f,P_1) < \frac{\varepsilon}{4}\]
+        \[U(f,P_2) - L(f,P_2) < \frac{\varepsilon}{4}\]
+        Define \(P = P_1 \cup P_2\), a partition of \([a,b]\). Then
+        \begin{align*}
+            U(f,P) - L(f,P) &= U(f,P_1) + U(f,P_2) \\
+            &- L(f,P_1) - L(f,P_2) \\
+            &+ \left(\underset{[x_{i-1}, x_i]}{\sup} f(x) - \underset{[x_{i-1}, x_i]}{\inf}\right)(c + \delta - (c - \delta))\\
+            &< \frac{\varepsilon}{4} + \frac{\varepsilon}{4} +2 \cdot M \cdot 2 \cdot \delta\\
+            &\leq \frac{\varepsilon}{2} + 4M \cdot \frac{\varepsilon}{8M}\\
+            &= \varepsilon
+        \end{align*}
+    \end{proof}
+    \begin{proof}[Proof: Part \textnormal{3}.]
+        If \(f\) has more than \(1\) discontinuity. Apply \hyperref[Part 2]{Part 2} enough times.
+    \end{proof}
+    \section{Monotonicity implies integrability}
+    \textit{``The theorem about the integrability of a monotone function.''} \vspace{3mm}
+    \begin{theorem}[Monotonicity implies integrability]
+        If \(f:[a,b] \to \mathbb{R}\) is monotone, then \(f\) is integrable.
+    \end{theorem}
+    \begin{proof}
+        Assume \(f\) is increasing (decreasing is done analogously).
+
+        Fix \(\varepsilon > 0\). We will find a partition \(P = \{x_0, x_1, \, \dots, x_n\}\) such that 
+        \[U(f,P) - L(f,P) < \varepsilon\]
+        Let \(P\) be the partition that splits \([a,b]\) into equally parts. Namely set
+        \[x_k = a + k \cdot \frac{b-a}{n}\]
+        Then
+        \begin{align*}
+            U(f,P) - L(f,P) &= \sum^n _{i=1} \left( \underset{[x_{i-1}, x_i]}{\sup} f(x) - \underset{[x_{i-1}, x_i]}{\inf} f(x)\right) \left(x_i - x_{i-1}\right)\\
+            &= \sum^n_{i=1} \left(f(x) - f(x_{i-1})\right) \cdot \frac{b-a}{n}\\
+            &= \frac{b-a}{n} \cdot \left(f(x_1) - f(x_0) + f(x_2) - f(x_1)+ \dots + f(x_n) - f(x_{n-1})\right)\\
+            &= \frac{b-a}{n} \cdot \left(f(b) - f(a)\right)
+        \end{align*}
+        Choose \(n\) to be greater than.
+        \[\frac{(b-a)(f(b) - f(a))}{\varepsilon}\]
+        Then,
+        \[U(f,P) - L(f,P) < \varepsilon\]
+        Thus \(f\) is integrable.
+    \end{proof}
+    \section{Mean value theorem for integrals}
+    \label{Mean value theorem for integrals}
+    \textit{``The mean value theorem for integrals.''} \vspace{3mm}
+    \begin{theorem}[Mean value theorem for integrals]
+        If \(f\) is continuous on \([a,b]\), then there exists \(c \in [a,b]\) such that
+        \[\int^b_a f(x) \diff x = f(c)(b-a)\]
+    \end{theorem}
+    \begin{proof}
+        If \(f\) is constant the proof is obvious.
+
+        Denote, 
+        \sidebyside{\[m = \underset{[x_{i-1}, x_i]}{\inf}\]}{\[M = \underset{[x_{i-1}, x_i]}{\sup}\]}
+        Since \(f\) is continuous by the extreme value theorem \footnote{The extreme value theorem is not proven in this document.\\See \url{https://en.wikipedia.org/wiki/Extreme_value_theorem}} there exists \(x_m \in [a,b]\) and \(x_M \in [a,b]\) such that
+        \sidebyside{\[m = f(x_m)\]}{\[M = f(x_M)\]}
+        Without loss of generality, assume
+        \[x_m < x_M\]
+        Observe that
+        \[m(b-a)\leq \int^b_a f(x) \diff x \leq M(b-a)\]
+        \[m \leq \frac{\int^b_a f(x) \diff x}{b-a} \leq M\]
+        Apply the intermediate value theorem \footnote{The intermediate value theorem is not proven in this document.\\See \url{https://en.wikipedia.org/wiki/Intermediate_value_theorem}} on \([x_m, x_M]\) since \(f(x_m) = m\) and \(f(x_M) = M\). There exists some point \(c \in [x_m, x_M]\)
+        \[f(c) = \frac{\int^b_a f(x) \diff x}{b-a}\]
+        \[f(c)(b-a) = \int^b_a f(x) \diff x\]
+    \end{proof}\newpage
+    \section{Integrability implies continuity of the integral}
+    \textit{``The theorem about the continuity of the function''}
+    \[F(x) = \int^x_a f(t) \diff t\]
+    \begin{theorem}[Integrability implies continuity of the integral]
+        If \(f\) is integrable on \([a,b]\), then the function 
+        \[F(x) = \int^x_a f(t) \diff t\]
+        is continuous on \([a,b]\)
+    \end{theorem}
+    \begin{proof}
+        Suppose \(c \in [a,b]\). We will show \(F\) is continuous at \(c\). Let \(M\) be such 
+        \[\abs{F(x)} \leq M\]
+        For all \(x \in [a,b]\)
+
+        We want to show that 
+        \[\lim_{h \to 0} F(c+h) = F(c)\]
+        Or equivalently 
+        \[\lim_{h \to 0} \left(F(c+h) - F(c) \right)= 0\]
+        We begin by showing that 
+        \[\lim_{h \to 0^+} \left(F(c+h) - F(c)\right)= 0\]
+        If \(h >0\) then
+        \[F(c+h) - F(c) = \int^{c+h}_a f(x) \diff x - \int^{c}_a f(x) \diff x = \int^{c+h}_c f(x) \diff x\]
+        Since \(-M \leq f \leq M\) on \([a,b]\)
+        \[\int^{c+h}_c f(x) \diff x \leq M(c+h-h) = Mh\]
+        Also
+        \[-Mh \leq \int^{c+h}_c f(x) \diff x\]
+        Therefore
+        \[\abs{F(c+h) - F(c)} = \abs{\int^{c+h}_c f(x) \diff x} \leq Mh\]
+        This means
+        \[\lim_{h \to 0^+} \left(F(c+h) - F(c) \right)= 0\]
+        Similarly
+        \[\lim_{h \to 0^-} \left(F(c+h) - F(c) \right)= 0\]
+    \end{proof} \newpage
+    \section{Fundamental theorem of calculus}
+    \label{Fundamental theorem of calculus}
+    \textit{``The fundamental theorem of calculus.''} \vspace{3mm}
+    \begin{theorem}[Fundamental theorem of calculus]
+        Assume \(f:[a,b] \to \mathbb{R}\) is continuous. 
+
+        Define \(F(x) = \int^x_a f(t) \diff t\). Then \(F\) is differentiable on \((a,b)\), such that
+        \[F'(x) = f(x)\]
+        and,
+        \[\int^b_a f(x) \diff x = F(b) - F(a)\]
+    \end{theorem}
+    \begin{proof}
+        Let us compute \(F'(x)\) for \((a,b)\). We want to find,
+        \[\lim_{h \to 0} \frac{F(x+h) - F(x)}{h}\]
+        We begin by finding 
+        \[\lim_{h \to 0^+} \frac{F(x+h) - F(x)}{h}\]
+        Given \(h \in (0, b- x)\), we compute 
+        \[F(x+h) - F(x) = \int^{x+h}_x f(t) \diff t\]
+        By the \hyperref[Mean value theorem for integrals]{mean value theorem for integrals}
+        \[\int^{x+h}_x f(t) \diff t = f(c)(x+h-x) = f(c)h\]
+        For some \(c \in [a,b]\).
+        
+        Note that \(f\) is uniformly continuous on \([a,b]\). Therefore given \(\varepsilon >0\) there exists \(\delta >0\) such that
+        \[\abs{x-y}< \delta \implies \abs{f(x) - f(y)}< \varepsilon\]
+        If \(h < \delta\), then
+        \[\abs{c - x} < \delta\]
+        Therefore,
+        \[\abs{\frac{F(x+h) -F(x)}{h} - f(x)} = \abs{\frac{f(c)+h}{h} - f(x)} = \abs{f(c) - f(x)} < \varepsilon\]
+        Thus,
+        \[\lim_{h \to 0^+} \frac{F(x+h) - F(x)}{h} = f(x)\]
+        A similar argument tells you the left limit is equal to the right limit.
+
+        Thus,
+        \[F'(x) = f(x)\]
+        The Newton-Leibniz formula follows immediately.
+    \end{proof}
+    \section{Definite integral substitution}
+    \textit{``The theorem about the substitution formula for definite integrals.''} \vspace{3mm}
+    \begin{theorem}[Definite integral substitution]
+        If \(f,g\) are continuous on \([a,b]\) and \(g\) is differentiable on \((a,b)\), then
+        \[\int^{g(b)}_{g(a)}f(u) \diff u = \int^b_a f(g(x))\cdot g'(x) \diff x\]
+    \end{theorem}
+    \begin{proof}
+        Suppose \(F\) is an anti-derivative of \(f\).
+
+        By the \hyperref[Fundamental theorem of calculus]{fundamental theorem of calculus},
+
+        \(LHS:\)
+        \[\int^{g(b)}_{g(a)}f(u) \diff u = F(g(b)) - F(g(a))\]
+        By the chain rule \footnote{The chain rule is not proven in this document. \\ See \url{https://en.wikipedia.org/wiki/Chain_rule}}
+        \[(F \circ g)' = (F' \circ g) \cdot g' = (f \circ g) \cdot g'\]
+        \(F \circ g\) is an anti-derivative of \( (f \circ g) \cdot g'\)
+        Thus by the \hyperref[Fundamental theorem of calculus]{fundamental theorem of calculus},
+
+        \(RHS:\)
+        \[\int^b_a f(g(x))\cdot g'(x) \diff x \int^b_a (f \circ g) \cdot g' \diff x = (F \circ g)(b) - (F \circ g)(a) = F(g(b)) - F(g(a))\]
+        Therefore \(LHS = RHS\).
+    \end{proof}
+    \section{Integration by parts}
+    \textit{``The theorem about integration by parts.''} \vspace{3mm}
+    \begin{theorem}[Integration by parts]
+        If \(u,v: [a,b \to \mathbb{R}]\) are continuous on \([a,b]\) and differentiable on \((a,b)\), then
+        \[\int uv' \diff x = uv - \int u'v \diff x\]
+        \[\int^b_a uv' \diff x = uv \Big|^b_a - \int u'v \diff x\]
+        Where,
+        \[uv \Big|^b_a = u(b)v(b) - u(a)v(a)\]
+    \end{theorem}
+    \begin{proof}
+        We know the product rule is as follows,
+        \[(uv)' = u'v + uv'\]
+        Taking the integral of both sides
+        \begin{align*}
+            \int (uv)' \diff x &= \int u'x \diff x + \int uv' \diff x\\
+            uv &= \int u'x \diff x + \int uv' \diff x\\
+            \int u'x \diff x &= uv - \int uv' \diff x
+        \end{align*}
+        The formula for the definite integral follows from the \hyperref[Fundamental theorem of calculus]{fundamental theorem of calculus}.
+    \end{proof}
+    \mychapter{5}{Series}
+    \setcounter{section}{20}
+    \section{Integral test}
+    \textit{``The integral test for the convergence of a series.''} \vspace{3mm}
+    \begin{theorem}[Integral test]
+        Assume \(f\) is a non-negative, non-increasing, continuous function on \([1,\infty]\)
+
+        Then,
+        \[\int^\infty_1 f(x) \diff x\]
+        and,
+        \[\sum^\infty_{n=1} f(n)\]
+        will converge or diverge together.
+    \end{theorem}
+    \begin{proof}
+        Consider the interval \([1,n+1]\), the set \(P = \{1,2,3, \, \dots, n -1\}\) is a partition of \([a,n+1]\). Since \(f\) is non-increasing
+        \sidebyside{\[\underset{[x_{i-1}, x_i]}{\inf f } = f(x_i)\]}{\[\underset{[x_{i-1}, x_i]}{\sup f} = f(x_{i-1})\]}
+        Consequently,
+        \begin{align*}
+            U(f,P) &= \sum^n_{i=1} \underset{[x_{i-1}, x_i]}{\sup f} ( x_i - x_{i-1} )\\
+            &= \sum^n_{i=1} f(x_{i-1})(i+1-i)\\
+            &= \sum^n_{i=1} f(x_{i-1}) = \sum^n_{i=1} f(i)
+        \end{align*}
+        Also,
+        \[L(f,P) = \sum^n_{i=1} f(i+1)\]
+        We know 
+        \[L(f,P) \leq  \int^{n+1}_1 f \diff x \leq U(f,P)\]
+        If \(\int^\infty_1 f \diff x\) converges then,
+        \[L(f,P)= \sum^n_{i=1} f(i+1)= \sum^{n+1}_{i=2} f(i)\]
+        converges as \(n \to \infty\), thus
+        \[\sum^\infty_{i=1} f(i)\]
+        converges.
+        
+        If \(\int^\infty_1 f \diff x\) diverges as \(n \to \infty\) then,
+        \[U(f,P)= \sum^n_{i=1} f(i+1)= \sum^{n+1}_{i=2} f(i)\]
+        diverges.
+    \end{proof}
+    \section{Limit comparison test}
+    \textit{``The limit comparison test for the convergence of a series.''} \vspace{3mm}
+    \begin{theorem}[Limit comparison test]
+        Suppose \(a_n, b_n > 0\) for all \(n \in \mathbb{N}\), if,
+        \[\limtoinfinity{n} \frac{a_n}{b_n} = c > 0 \]
+        \underline{Note:} \(c\) is finite.
+        
+        Then,
+        \[\sum^\infty_{n=1} a_n\]
+        and,
+        \[\sum^\infty_{n=1} b_n\]
+        converge or diverge together.
+    \end{theorem}
+    \begin{proof}[Proof: Part \textnormal{1.}]
+        Assume \(\sum^\infty_{n=1} b_n\) converges. 
+        
+        Since
+        \[\limtoinfinity{n} \frac{a_n}{b_n} = c\]
+        there exists \(N \in \mathbb{N}\) such that,
+        \[\frac{a_n}{b_n} < 2c\]
+        and,
+        \[a_n < b_n\]
+        for all \(n \geq N\). Now,
+        \[\sum^\infty_{n=1} 2c b_n = 2c \sum^\infty_{n=1} b_n \]
+        converges by comparison since
+        \[\sum^\infty_{n=N} a_n \leq 2c \sum^\infty_{n=N} b_n \leq 2c \sum^\infty_{n=1} b_n\]
+        the series,
+        \[\sum^\infty_{n=N} a_n\]
+         converges, hence 
+         \[\sum^\infty_{n=1} a_n\] 
+         also converges.
+    \end{proof}
+    \begin{proof}Proof: Part \textnormal{2.}
+        Suppose \(\sum^\infty_{n=1} a_n\) converges.
+
+        Then,
+        \[\limtoinfinity{n} \frac{b_n}{a_n} = \frac{1}{c} > 0\]
+        and thus,
+        \[\sum^\infty_{n=1} b_n\]
+        converges by the previous argument.
+    \end{proof}
+    \section{Ratio test}
+    \textit{``The ratio test for the convergence of a series.''} \vspace{3mm}
+    \begin{theorem}[Ratio test]
+        Assume \(a_n >0\) for all \(n \in \mathbb{N}\). Then
+        \begin{enumerate}
+            \item 
+            \[\hyperref[Ratio test part 1]{\limsup_{n \to \infty} \frac{a_{n+1}}{a_n} = r < 1}\]
+            then,
+            \[\sum^\infty_{n=1} a_n\]
+            converges.
+            \item 
+            \[\hyperref[Ratio test part 2]{\liminf_{n \to \infty} \frac{a_{n+1}}{a_n} = r > 1}\]
+            then,
+            \[\sum^\infty_{n=1} a_n\]
+            diverges.
+        \end{enumerate}
+    \end{theorem}
+    \phantomsection
+    \label{Ratio test part 1}
+    We assume \[\limtoinfinity{n} \frac{a_{n+1}}{a_n} = r\] exists within the real numbers for this proof.
+    \begin{proof}[Proof of \textnormal{1.}]
+        Fix \(s\) such that \(r<s<1\).
+        
+        Because
+        \[\limtoinfinity{n} \frac{a_{n+1}}{a_n} = r < s \]
+        there exists \(N \in \mathbb{N}\) such that
+        \[\frac{a_{n+1}}{a_n} < s\]
+        Then,
+        \[\frac{a_{N + 1}}{a_N} < s\]
+        and,
+        \[a_{N+1} < s \cdot a_N\]
+        Also,
+        \[\frac{a_{N + 2}}{a_{N+1}} < s\]
+        and,
+        \[a_{N + 2}< s \cdot a_{N+1} < s^2 \cdot a_N\]
+        Next,
+        \[\frac{a_{N + 3}}{a_{N+2}} < s\]
+        and,
+        \[a_{N + 3} < s \cdot a_{N + 2}< s^2 \cdot a_{N+1} < s^3 \cdot a_N\]
+        Continuing like this we find,
+        \[a_{N+k} < s^k a_N\]
+        Thus,
+        \[\sum^\infty_{n=N} a_n \leq \sum^\infty_{k=0}s^k a_N = a_N \cdot \sum^\infty_{k=0} s^k = a_N \cdot \frac{1}{1-s}\]
+        Thus \(\sum^\infty_{n=N} a_n\) converges and \(\sum^\infty_{n=1} a_n\) converges.
+    \end{proof}
+    \phantomsection
+    \label{Ratio test part 2}
+    \begin{proof}[Proof of \textnormal{2.}]
+        Assume
+        \[\limtoinfinity{n} \frac{a_{n+1}}{a_n} = r > 1\]
+        Therefore there exists \(N \in \mathbb{N}\) such that if \(n \geq N\), then
+        \[\frac{a_{n+1}}{a_n} > 1\]
+        Then
+        \[\frac{a_{N+1}}{a_N} > 1\]
+        so,
+        \[a_{N+1} > a_N\]
+        Also,
+        \[\frac{a_{N+2}}{a_N+1} > 1\]
+        so,
+        \[a_{N+2} > a_{N+1} > a_N\]
+        Thus \(a_{N+k} > a-N\) for all \(k \in \mathbb{N}\), which means \(a_n\) cannot go to \(0\) as \(n \to \infty\). Therefore \(\sum^\infty_{n=1} a_n\) diverges.
+    \end{proof}
+    \begin{remark}
+        If 
+        \[\liminf_{n \to \infty} \frac{a_{n+1}}{a_n} = \infty\]
+        then the summation diverges.
+        
+        If
+        \[\lim_{n \to \infty} \frac{a_{n+1}}{a_n} = 1\]
+        then the test is inconclusive.
+    \end{remark}
+    \section{Leibniz test}
+    \textit{``The Leibniz test for the convergence of a series.''} \vspace{3mm}
+    \begin{theorem}[Leibniz test]
+        Assume \((a_n)^\infty_{n=1}\) is a sequence such that \(a_n >0\), \(a_n \geq a_{n+1}\) for all \(n \in \mathbb{N}\) and \(\limtoinfinity{n} a_n = 0\) then the series
+        \[\sum^\infty_{n=1} (-1)^{n+1} \cdot a_n\]
+        converges.
+        \vspace{3mm}
+        \[\sum^\infty_{n=1} (-1)^{n+1} \cdot a_n = a_1 - a_2 + a_3 - a_4 \dots\]
+        \ctikzfig{Leibniz test}
+    \end{theorem}
+    \begin{proof}
+        Let 
+        \[s_n = \sum^n_{n=1} (-1)^{k+1} a_k\]
+        Observe that \(s_1 \geq s_2 \geq \dots\)
+
+        Also note that
+        \begin{align*}
+            s_{2n+3} &= s_{2n+1} - a_{2n+2} + a_{2n+3}\\
+            &= s_{2n+1} + \underbrace{\left(a_{2n+3} - a_{2n+2}\right)}_{\leq 0}  \leq s_{2n+1}\\
+        \end{align*}
+        Also,
+        \[s_{2n+2} = s_{2n} - a_{2n+1} + a_{2n+2} \geq s_{2n}\]
+        and,
+        \[s_2 \leq s_4 \leq s_6\]
+        More over, 
+        \[s_{2n} \leq s_{2n+1}\]
+        since
+        \[s_{2n+1} = s_{2n} + a_{2n+1} \geq s_{2n}\]
+        We can conclude
+        \[s_{2n} \leq s_{2n+1} \leq s_1\]
+        \[s_{2n+1} \geq s_{2n} \geq s_2\]
+        Thus the sequences \((s_{2n})^\infty_{n=1}\) and \((s_{2n+1})^\infty_{n=1}\) are bounded and monotone, hence they converge by the theorem proven \hyperref[Convergence of a bounded, monotone sequence]{here.}
+        \sidebyside{\[\limtoinfinity{n} s_{2n} = \alpha\]}{\[\limtoinfinity{n} s_{2n+1} = \beta\]}
+        Now,
+        \begin{align*}
+            \beta - \alpha &= \limtoinfinity{n} s_{2n+1} - \limtoinfinity{n} s_{2n}\\
+            &= \limtoinfinity{n} \left(s_{2n+1} - s_{2n}\right)\\
+            &= \limtoinfinity{n} a_{2n+1}\\
+            &= 0
+        \end{align*}
+        Thus \(\beta = \alpha\) and,
+        \[\limtoinfinity{n} s_{n} = \alpha = \beta\]
+        Therefore,
+        \[\sum^\infty_{n=1} (-1)^{n+1} \cdot a_n\]
+        converges.
+    \end{proof}
+    \section{Absolute convergence implies convergence}
+    \textit{``The theorem about the convergence of an absolutely convergent series.''} \vspace{3mm}
+    \begin{theorem}[Absolute convergence implies convergence]
+        If
+        \[\sum^\infty_{n=1} a_n\]
+        converges absolutely, i.e.
+        \[\sum^\infty_{n=1} \abs{a_n}\]
+        converges, then it also converges.
+    \end{theorem}
+    This proof utilises the Cauchy Criterion. It is included here for convenience. A proof can be found in the appendix \hyperref[Cauchy Criterion]{here.} \vspace{3mm}
+    \begin{claim}[Cauchy Criterion]
+        The series
+        \[\sum^\infty_{n=1} a_n\] 
+        converges if and only if for all \(\varepsilon >0\) there exists \(N \in\mathbb{N}\) such that if \(q> p \geq N\) then
+        \[\abs{\sum^q_{k=p+1} a_k} < \varepsilon\]
+    \end{claim}
+    \begin{proof}[Proof of the theorem.]
+        Fix \(\varepsilon > 0\). 
+        
+        Need to show that there exists \(N \in \mathbb{N}\) such that if \(p > q \geq N\) then,
+        \[\abs{\sum^p_{k=q} a_k} < \varepsilon\]
+        As,
+        \[\sum^\infty_{n=1} \abs{a_n}\]
+        converges, there exists \(N \in \mathbb{N}\) such that,
+        \[\abs{\sum^\infty_{n=1} \abs{a_n}} < \varepsilon\]
+        By the triangle inequality,
+        \[\abs{\sum^\infty_{n=1} a_n} \leq \sum^\infty_{n=1} \abs{a_n} = \abs{\sum^\infty_{n=1} \abs{a_n}} < \varepsilon\]
+    \end{proof}
+    \mychapter{6}{Maclaurin series}
+    \setcounter{section}{25}
+    \section{Maclaurin series of common functions}
+    \textit{``The formulas (and their derivations) for the Maclaurin series of the following functions:''}
+    \sidebyside{\[e^x\]}{\[\sin(x)\]}
+    \sidebyside{\[\cos(x)\]}{\[\frac{1}{1-x}\]} \vspace{3mm}
+    \begin{theorem}[Maclaurin series of common functions]
+        These theorems assume \(0! = 1\) and \(0^0 = 1\)
+
+        The general Maclaurin series is
+        \[\sum^\infty_{n=0} \frac{f^{(n)}(0)}{n!} \cdot x^n\]
+
+        The following are common Maclaurin series.
+        \begin{enumerate}
+            \item \[\hyperref[Maclaurin series 1]{e^x = \sum^\infty_{n=0} \frac{x^n}{n!}}\]
+            \item \[\hyperref[Maclaurin series 2]{\sin(x) = \sum^\infty_{n=0} (-1)^n \frac{x^{2n+1}}{(2n+1_)!}}\]
+            \item \[\hyperref[Maclaurin series 3]{\cos(x) = \sum^\infty_{n=0} (-1)^n \frac{x^{2n}}{2n!}}\]
+            \item \[\hyperref[Maclaurin series 4]{\frac{1}{1-x} = \sum^\infty_{n=0} x^n}\]
+        \end{enumerate}
+    \end{theorem}
+    \phantomsection
+    \label{Maclaurin series 1}
+    \begin{proof}[Proof of \textnormal{1.}]
+        Let us write the Maclaurin series, clearly,
+        \[f^{(n)} (0) = \ddiff{x} e^x \Big|_{x=0} = e^0 = 1\]
+        Therefore the Maclaurin series is
+        \[\sum^\infty_{n=0} \frac{x^n}{n!}\]
+        \underline{Note:} the series converges absolutely by the ratio test for all \(x \in \mathbb{R}\)
+        \[\limtoinfinity{n} \frac{\abs{x}^{n+1} n!}{(n+1)! \abs{x}^n} = \limtoinfinity{n} \frac{\abs{x}}{n+1} = 0 < 1\]
+    \end{proof}
+    \phantomsection
+    \label{Maclaurin series 2}
+    \begin{proof}[Proof of \textnormal{2.}]
+        \begin{align*}
+            f(x) &= \sin(x)\\
+            f'(x) &= \cos(x)\\
+            f''(x) &= - \sin(x)\\
+            f'''(x) &= - \cos(x)\\
+            f''''(x) &= \sin(x)
+        \end{align*}
+        \sidebyside{\[f^{4k} (x) = \sin(x)\]}{\[f^{4k+1}(x) = \cos(x)\]}
+        For all \(k \in \mathbb{N}\)
+
+        Then the Maclaurin series of \(f\) is
+        \begin{align*}
+            \sum^\infty_{n=0} \frac{f^{(n)}(0)}{n!} \cdot x^n &= \frac{\sin(0)}{0!} \cdot x^0 + \frac{\cos(0)}{1!} \cdot x^1 + \frac{- \sin(0)}{2!} \cdot x^2 + \frac{- \cos(0)}{3!}\cdot x^3 + \dots\\
+            &= x - \frac{1}{3!} \cdot x^3 + \frac{1}{5!} \cdot x^5\\
+            &= \sum^\infty_{n=0} (-1)^n \cdot \frac{x^{2n+1}}{(2n+1)!}
+        \end{align*}
+        \underline{Note:} the series converges absolutely by the ratio test for all \(x \in \mathbb{R}\)
+        \[\limsup_{n \to \infty} \frac{\left(-1\right)^{n+1}\cdot \left(\frac{x^{2n+2}}{\left(2n+2\right)!}\right)}{\left(-1\right)^n\cdot \left(\frac{x^{2n+1}}{\left(2n+1\right)!}\right)} = \limsup_{n \to \infty} \frac{-x}{2n+2} = 0 < 1\]
+    \end{proof}
+    \phantomsection
+    \label{Maclaurin series 3}
+    \begin{proof}[Proof of \textnormal{3.}]
+        \begin{align*}
+            f(x) &= \cos(x)\\
+            f'(x) &= - \sin(x)\\
+            f''(x) &= - \cos(x)\\
+            f'''(x) &= \sin(x)\\
+            f''''(x) &= \cos(x)
+        \end{align*}
+        \begin{align*}
+            \sum^\infty_{n=0} \frac{f^{(n)}(0)}{n!} \cdot x^n &= \frac{\cos(0)}{0!} \cdot x^0 + \frac{- \sin(0)}{1!} \cdot x^1 + \frac{- \cos(0)}{2!} \cdot x^2 + \frac{\sin(0)}{3!}\cdot x^3 + \dots\\
+            &= 1 - \frac{1}{2!} \cdot x^2 + \frac{1}{4!} \cdot x^4 - \frac{1}{6!} \cdot x^6 + \dots\\
+            &= \sum^\infty_{n=0} (-1)^{n} \cdot \frac{x^{2n}}{2n!}
+        \end{align*}
+        For all \(x \in \mathbb{R}\)
+    \end{proof}
+    \phantomsection
+    \label{Maclaurin series 4}
+    \begin{proof}[Proof of \textnormal{4.}]
+        \begin{align*}
+            f(x) &= \frac{1}{1-x}\\
+            f'(x) &= \frac{1}{(1-x)^2}\\
+            f''(x) &= \frac{2}{(1-x)^3}\\
+            f'''(x) &= \frac{6}{(1-x)^4}\\
+            f''''(x) &= \frac{24}{(1-x)^5}
+        \end{align*}
+        \begin{align*}
+            \sum^\infty_{n=0} \frac{f^{(n)}(0)}{n!} \cdot x^n &= \frac{1}{(1-0)(0!)} \cdot x^0 + \frac{1}{(1-0)^2(1!)} \cdot x^1 + \frac{2}{(1-0)^3(2!)} \cdot x^2\\
+            &+ \frac{6}{(1-0)^4(3!)} \cdot x^3 + \frac{24}{(1-0)^5(4!)} \cdot x^4\\
+            &= \sum^\infty_{n=0} \frac{n!}{n!} \cdot x^n\\
+            &= \sum^\infty_{n=0} x^n
+        \end{align*}
+        This is a geometric series. It converges if \(x \in (-1,1)\) and diverges otherwise.
+    \end{proof}
+    \mychapter{7}{Matricies}
+    \setcounter{section}{26}
+    \section{Solutions of an inhomogeneous system in terms of the associated homogeneous system}
+    \textit{``The proposition describing the set of solutions of an inhomogeneous linear system in terms of solutions to the associated homogeneous system.''} \vspace{3mm}
+    \begin{theorem}[Solutions of an inhomogeneous system]
+        If \(p\) is a vector such that \(Ap = b\) then,
+        \[\{x \in \mathbb{R}^n ~|~ Ax = b\} = \{y+p ~|~ y \in NS(A)\}\]
+    \end{theorem}
+    \begin{proof}
+        Observe  that \(A(x-y) = Ax - Ay\) and that \(A(\lambda x) = \lambda Ax\) for all \(x,y \in \mathbb{R}^n, ~ \lambda \in \mathbb{R}\)
+
+        Assume \(y \in NS(A)\). Let us prove that 
+        \[A(y+p)= b\]
+        Indeed
+        \[A(y+p) = Ay + Ap = 0+ b =b\]
+        \[\{y+p ~|~ y \in NS(A)\} \subset \{x \in \mathbb{R}^n ~|~ Ax = b\}\]
+        Now assume \(Ax + b\). Clearly
+        \[x = p + \underbrace{(x-p)}_y\]
+        The vector \(y = x-p\) is in \(NS(A)\) because 
+        \begin{align*}
+            A(x-p) &= Ax -Ap\\
+            &= b-b\\
+            &= 0
+        \end{align*}
+        Thus,
+        \[\{y+p ~|~ y \in NS(A)\} \supset  \{x \in \mathbb{R}^n ~|~ Ax = b\}\]
+        Therefore,
+        \[\{y+p ~|~ y \in NS(A)\} = \{x \in \mathbb{R}^n ~|~ Ax = b\}\]
+    \end{proof}
+    \section{A matrix's invertibility and its nullspace} 
+    \textit{``The theorem about the relationship between the invertibility of a matrix and its null-space.''} \vspace{3mm}
+    \begin{theorem}[A matrix's invertibility and its nullspace]
+        A matrix is invertible if and only if \(NS(A) = 0\)
+    \end{theorem}
+    \begin{proof}
+        Assume \(A\) is invertible. We know \(0 \in NS(A)\). We want to prove that if \(Ax = 0\), \(x=0\). 
+        
+        Now, if \(Ax = 0\), then
+        \[x = (A^{-1}A)x = A^{-1}(Ax) = A^{-1} 0 = 0\]
+    \end{proof}
+    \begin{proof}
+        If \(NS(A) = 0\), then the system \(Ax = 0\) has a unique solution. By an earlier proposition, the system \(Ax = b^i\) for \(i=1, \, \dots, n\) we obtain an array of the vectors
+        \[x^i = \begin{gmatrix}[b]
+            x_{1i}\\
+            x_{2i}\\
+            \vdots\\
+            x_{ni}
+        \end{gmatrix}\]
+        We construct the matrix
+        \[C = \begin{gmatrix}[b]
+            x_{11} & \dots & x_{1n}\\
+            \vdots & \ddots & \vdots\\
+            x_{n1} & \dots & x_{nn}
+        \end{gmatrix}\]
+        Clearly \(AC = I_n\). Thus \(C\) is the right inverse of \(A\).
+
+        Continuing, let us show that \(A\) has a left inverse, Note that \(C\) has a left inverse, \(A\). By the same argument in the previous proof, this implies \(NS(C) = \{0\}\). Therefore \(AC = CA = I_n\), thus \(C\) is the inverse of \(A\).
+    \end{proof} \newpage
+    \section{Linearity of the determinant}
+    \textit{``The theorem about the linearity of the determinant.''} \vspace{3mm}
+    \begin{theorem}[Linearity of the determinant]
+        Suppose \(u,v,a_1, \, \dots, a_n\) are vectors in \(\mathbb{R}^N\). Consider the matrix
+        \sidebysidebyside{
+            \[
+                A = 
+                \begin{gmatrix}[b]
+                    a_1\\
+                    \vdots\\
+                    a_{r-1}\\
+                    u + \lambda v\\
+                    a_{r+1}\\
+                    \vdots\\
+                    a_n
+                \end{gmatrix}
+            \]
+        }{
+            \[
+                B = 
+                \begin{gmatrix}[b]
+                    a_1\\
+                    \vdots\\
+                    a_{r-1}\\
+                    u\\
+                    a_{r+1}\\
+                    \vdots\\
+                    a_n
+                \end{gmatrix}
+            \]
+        }{
+            \[
+                C = 
+                \begin{gmatrix}[b]
+                    a_1\\
+                    \vdots\\
+                    a_{r-1}\\
+                    \lambda v\\
+                    a_{r+1}\\
+                    \vdots\\
+                    a_n
+                \end{gmatrix}
+            \]
+        }
+        Then \(\det(A) = \det(B) + \det(C)\)
+    \end{theorem}
+    \begin{proof}
+        Induction in \(n\).
+
+        The result is obvious if \(n = 1\)
+
+        Then \(A = u +\lambda v\), \(B = u\), \(C = \lambda v\). For some \(u,v, \lambda \in \mathbb{R}\). Then
+        \[\det(A) = u + \lambda v = \det(B) + \lambda \det(C)\]
+        Now assume the result holds for \((n-a)\times (n-1)\) matrices. Let us prove it assuming \(A,B,C\) are \(n \times n\)
+        \begin{enumerate}
+            \item[\underline{Case 1.}]
+                \(r = 1\)
+
+                In this case,
+                \begin{align*}
+                    \det (A) &= \sum^n_{j=1} (-1)^{1+j} (u_j + \lambda v_j) \det (\widetilde{A}_{1j})\\
+                    &=\sum^n_{j=1} (-1)^{1+j} u_j \det (\widetilde{A}_{1j}) + \lambda \sum^n_{j=1} (-1)^{1+j} v_j \det (\widetilde{A}_{1j})\\
+                \end{align*}
+                Where \(u = (u_1, u_2, \, \dots, u_n)\), \(v = (v_1, v_2, \, \dots, v_n)\)
+
+                Now, since \(r=1\)
+                \[\widetilde{A}_{1j} = \widetilde{B}_{1j} = \widetilde{C}_{1j}\]
+                Therefore
+                \begin{align*}
+                    \det(A) &= \sum^n_{j=1} (-1)^{1+j} u_j \det (\widetilde{B}_{1j}) + \lambda \sum^n_{j=1} (-1)^{1+j} v_j \det (\widetilde{C}_{1j})\\
+                    &= \det(B) + \lambda \det (C)
+                \end{align*}
+            \item[Case 2.]
+                \(r>1\)
+
+                In this case, the first rows \(A,B,C\) are the same (in fact they are \(a_1\)). Now,
+                \[\det(A) = \sum^n_{j=1} (-1)^{1+j} A_{1j} \det (\widetilde{A}_{1j})\]
+                The matrix \(\widetilde{A}_{1j}\) is \((n-1) \times (n-1)\). By the induction hypothesis,
+                \[\det(\widetilde{A}_{1j}) = \det(\widetilde{B}_{1j}) + \lambda \det(\widetilde{C}_{1j})\]
+                Therefore,
+                \begin{align*}
+                    \det(A) &= \sum^n_{j=1} (-1)^{1+j} \widetilde{A}_{1j}) \left(\det(\widetilde{B}_{1j}) + \lambda \det(\widetilde{C}_{1j})\right)\\
+                    &= \sum^n_{j=1} (-1)^{1+j} \widetilde{A}_{1j} \det(\widetilde{B}_{1j}) + \lambda \sum^n_{j=1} (-1)^{1+j} \widetilde{A}_{1j} \det(\widetilde{C}_{1j})\\
+                    &= \sum^n_{j=1} (-1)^{1+j} \widetilde{B}_{1j} \det(\widetilde{B}_{1j}) + \lambda \sum^n_{j=1} (-1)^{1+j} \widetilde{C}_{1j} \det(\widetilde{C}_{1j})\\
+                    &= \det(B) + \det(C)
+                \end{align*}
+        \end{enumerate}
+    \end{proof}
+    \section{The invertibility of a matrix and its determinant.}
+    \textit{``The theorem about the relationship between the invertibility of a matrix and its determinant.''} \vspace{3mm}
+    \begin{theorem}[The invertibility of a matrix and its determinant]
+        A matrix \(A\) is invertible if and only if \(det(A) \not = 0\)
+    \end{theorem}
+    This proof utilises the fact that \(\det (AB) = \det(A) \cdot \det(B)\) without proof.
+    \begin{proof}
+        Assume \(A\) is invertible, since \(AA^{-1} = I_n\)
+        \[\det (AA^{-1}) = \det (A) \cdot \det (A^{-1}) = 1\]
+    \end{proof}
+    \begin{proof}
+        Consider the matrix
+        \[G = \frac{1}{\det (A)} \left(\left(C_{ij}\right)^n_{i,j = 1}\right)^T\]
+        Where \(C_{ij} = (-1)^{i+j} \det (\widetilde{A}_{ij})\)
+
+        We claim: \(GA = AG = I_n\)
+
+        Indeed, given \(k = 1, \, \dots, n\) we find
+        \begin{align*}
+            (AG)_{kk} &= \sum^n_{i=1} A_{ki} G_{ik}\\
+            &= \sum^n_{i=1} A_{ki} \frac{1}{\det (A)} (-1)^{i+k} \det (\widetilde{A}_{ki})\\
+            &= \frac{1}{\det (A)} \sum^n_{i=1} A_{ki}  (-1)^{i+k} \det (\widetilde{A}_{ki})\\
+            &= \frac{1}{\det (A)} \det (A)\\
+            &= 1
+        \end{align*}
+        Thus \(AG\) has \(1\)'s on the diagonal
+
+        If \(k \not = l\) then
+        \begin{align*}
+            (AG)_{kl} &= \sum^n_{i=1} A_{ki} G_{il}\\
+            &= \frac{1}{\det (A)} \sum^n_{i=1} A_{ki} (-1)^{i+l} \det (\widetilde{A}_{li})
+        \end{align*}
+        The sum is the determinant of the matrix:
+        \[
+            \begin{gmatrix}[b]
+                A_{11} & \dots  & A_{1n} \\
+                \vdots & \ddots & \vdots \\
+                A_{k1} & \dots  & A_{kn} \\
+                \vdots & \ddots & \vdots \\
+                A_{k1} & \dots  & A_{kn} \\
+                \vdots & \ddots & \vdots \\
+                A_{n1} & \dots  & A_{nn}
+            \end{gmatrix}
+            \begin{gmatrix}
+                ~\\
+                ~\\
+                \longleftarrow k^{th} \text{row}\\
+                ~\\
+                \longleftarrow i^{th} \text{row}\\
+                ~\\
+                ~
+            \end{gmatrix}
+        \]
+        However this matrix has two identical rows, thus the determinant is \(0\). This means \(AG\) has \(0\)'s on the diagonal and
+        \[AG = I_n\]
+        Similarly \(GA = I_n\) can be shown. Thus \(A\) is invertible.
+    \end{proof}
+
+    \mychapter{8}{Appendix}
+    \newcommand{\shrug}[1][]{%
+        \begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
+            \def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
+            \draw \arm;
+            \draw[xscale=-1] \arm;
+            \def\headpart{(0.6,0) arc[start angle=-40, end angle=40,x radius=0.6,y radius=0.8]};
+            \draw \headpart;
+            \draw[xscale=-1] \headpart;
+            \def\eye{(-0.075,0.15) .. controls (0.02,0) .. (0.075,-0.15)};
+            \draw[shift={(-0.3,0.8)}] \eye;
+            \draw[shift={(0,0.85)}] \eye;
+            % draw mouth
+            \draw (-0.1,0.2) to [out=15,in=-100] (0.4,0.95);
+        \end{tikzpicture}}
+
+    \begin{center}
+        \textmd{Authors note}
+    \end{center}
+    \vspace{10mm}
+    The proofs below are not on the final exam but I think they are neat and would be nice to have within this document. Of course as this is a `nice to have' it's not very comprehensive but still, ya know, why not, it's not like this whole thing is my method of procrastination or something... I may add more later on but there wont be any major updates.
+
+    This document was constructed in an effort to study for the MATH1071 final exam. It quickly went south and devolved into something just to fill the void however it has been a great exercise in LaTeX. To be frank the only reason I started this endeavour was so I could use those boxes and make a damn sexy theorem list. 
+
+    Tom (@tomstephen\#0001) and Barry (@barry.\#1347) are to thank for the wonderful boxes you'll find throughout this document. If you find any errors please let me know, I'll correct them as soon as I can (I'm sure there are more than I can count). 
+
+    Anyway, thanks for using this theorem list, if it helps you in anyway then I'm pleased. Maybe I'll make something else like this later on, who knows \shrug
+    \newpage
+    \setcounter{section}{30}
+    \label{Cauchy Criterion}
+    \section{Cauchy Criterion}
+    \begin{theorem}[Cauchy Criterion]
+        The series
+        \[\sum^\infty_{n=1} a_n\]
+        converges if and only if for all \(\varepsilon >0\) there exists \(N \in\mathbb{N}\) such that if \(q> p \geq N\) then
+        \[\abs{\sum^q_{k=p+1} a_k} < \varepsilon\]
+    \end{theorem}
+    \begin{proof}
+        Denote the partial sum as follows,
+        \[s_k = \sum^k_{n=1} a_n\]
+        \(\sum^\infty_{n=1} a_n\) converges if and only if \((s_n)^\infty_{n=1}\) converges if and only if \((s_n)^\infty_{n=1}\) is Cauchy \footnote{The definition of a Cauchy sequence is not included in this document. \\ See \url{https://en.wikipedia.org/wiki/Cauchy_sequence}}. This means for all \(\varepsilon > 0\) there exists \(N \in \mathbb{N}\) such that if \(p,q \geq N\)
+        \[\abs{s_q - s_p} < \varepsilon\]
+        Now,
+        \[\abs{s_q - s_p} = \abs{\sum^q_{n=1} a_n - \sum^p_{n=1} a_n} = \abs{\sum^q_{n=p+1} a_n} < \varepsilon\]
+    \end{proof}
+\end{document}

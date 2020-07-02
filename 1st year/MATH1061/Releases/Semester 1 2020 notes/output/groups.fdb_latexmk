@@ -1,0 +1,13 @@
+# Fdb version 3
+["pdflatex"] 1571802536 "groups.tex" "output/groups.pdf" "groups" 1571802537
+  "/usr/local/texlive/2018/texmf-dist/fonts/map/fontname/texfonts.map" 1511824771 3332 103109f5612ad95229751940c61aada0 ""
+  "/usr/local/texlive/2018/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1480098701 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1528024601 4220279 d2332c24fa6dd0e7803ef8a0b9b1e933 ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "groups.tex" 1571802535 972 8ccee065e1395217bacc566395499fb4 ""
+  "output/groups.aux" 1571141186 549 df677c70115d6816b5558bbbe3826cd5 ""
+  (generated)
+  "output/groups.log"
+  "output/groups.pdf"
+  "output//groups.log"

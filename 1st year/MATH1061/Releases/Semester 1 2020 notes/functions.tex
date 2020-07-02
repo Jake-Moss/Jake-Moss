@@ -1,0 +1,73 @@
+\section{Functions}
+\subsection{One-to-one}
+\begin{definition}
+    Let $f$ be a function from a set $X$ to a set $Y$. The function $f$ is \underline{one-to-one} (or \underline{injective}) if and only if for all elements $x_1$ and $x_2$ in $X$, $$\text{if } f(x_1) = f(x_2),\,\text{then } x_1 = x_2$$
+    Or, equivalently, for all elements $x_1$ and $x_2$ in $X$, $$\text{if } x_1 \neq x_2,\,\text{then } f(x_1) \neq f(x_2)$$
+
+    A function $f: X\rightarrow Y$ is \underline{not one-to-one} if and only if there exist some $x_1$ and $x_2$ in $X$ such that $f(x_1) = f(x_2)$ and $x_1 \neq x_2$
+\end{definition}
+
+\begin{enumerate}
+\item To prove a function $f: X\rightarrow Y$ is one-to-one, we typically use a direct proof: \begin{enumerate}
+    \item suppose $x_1$ and $x_2$ are element of $X$, and $f(x_1) = f(x_2)$
+    \item show that $x_1 = x_2$
+\end{enumerate}
+
+\item To prove that a function $f: X\rightarrow Y$ is not one-to-one, we typically find elements $x_1$ and $x_2$ in $X$ such that $f(x_1) = f(x_2)$ but $x_1 \neq x_2$
+\end{enumerate}
+
+\begin{example}
+    Let $f: \mathbb R \rightarrow \mathbb R$ be defined by $f(x) = x^2$. Is $f$ one-to-one?
+
+    Proof that $f$ is not one-to-one:
+    \begin{proof}
+        Take $x_1 = 2$ and $x_2 = -2$
+
+        Since $f(2) = 4$ and $f(-2) = 4$, we have found different elements of the domain with the same image. Thus $f$ is not one-to-one.
+    \end{proof}
+\end{example}
+
+\subsection{Onto}
+\begin{definition}
+    Let $f$ be a function from a set $X$ to a set $Y$. The function $f$ is \underline{onto} (or \underline{surjective}) if and only if given any element $y\in Y$, it is possible to find an element $x\in X$ with the property that $y = f(x)$.
+
+    Equivalently, $f:X\rightarrow Y$ is onto if and only if $\forall y\in Y,\,\exists x\in X$ such that $f(x) = y$
+
+    A function $f:X\rightarrow Y$ is \underline{not onto} if and only if there exists some $y\in Y$ such that for all $x\in X$, $f(x)\neq y$.
+\end{definition}
+
+\begin{itemize}
+    \item To prove that a function $f: X\rightarrow Y$ is onto, we usually \begin{itemize}
+        \item suppose that $y\in Y$
+        \item construct an element $x$ of $X$ with $f(x) = y$
+    \end{itemize}
+    \item To prove that a function $f: X\rightarrow Y$ is not onto, we usually \begin{itemize}
+        \item find an element $y\in Y$ such that $y \neq f(x)$ for any $x\in X$
+    \end{itemize}
+\end{itemize}
+
+\newpage
+\subsection{Inverse}
+\begin{theorm}
+    Suppose some function \(f: X\to Y\) is a bijection. Then, \[\exists f^{-1}: Y\to X\]
+    That is defined,\\
+    Given any \(y\in Y\), \(f^{-1}(y) = x\) for some unique element \(x\in X\) such that \(f(x) = y\). 
+\end{theorm}
+ \subsection{Composition of Functions}
+ Let \(f: X\to Y\) and \(g: Y\to Z\) be functions.\\
+ The composition of f and g is the function \(g\circ f: X\to Z\).\\
+ This is defined by \((g\circ f)(x) = g(f(x)), \quad \forall x \in X\).\\
+ The domain of \(g\circ f\) is X and the co-domain is Z.\\
+ The range of \(g\circ f\) is the image under g of the range of f.\\
+ \begin{theorm}
+     If \(f: X\to Y\) is a function and \(\eta_x\) is the identity function on x and \(\eta_y\) is the identity function on Y then, \[f\circ \eta_x = f \qquad \eta_y\circ f = f\]\\
+ \end{theorm}
+ \begin{theorm}
+     Let \(f: X\to Y\) be a bijection with inverse function \(f^{-1}: Y\to X\). Then, \(f^{-1}\circ f = \eta_x\) and \(f\circ f^{-1} = \eta_y\).\\
+ \end{theorm}
+ \begin{theorm}
+     If \(f: X\to Y, \quad g:Y\to Z\) are both injective functions, then \(g\circ f\) is injective.\\
+ \end{theorm}
+ \begin{theorm}
+    If \(f: X\to Y, \quad g:Y\to Z\) are both onto functions, then \(g\circ f\) is onto.\\     
+ \end{theorm}

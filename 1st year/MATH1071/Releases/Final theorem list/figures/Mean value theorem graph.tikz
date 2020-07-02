@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=none] (0) at (0, 0) {};
+		\node [style=none] (1) at (9, 0) {};
+		\node [style=none] (2) at (0, 7) {};
+		\node [style=none] (4) at (10, 0) {};
+		\node [style=none] (5) at (1, 0) {};
+		\node [style=none] (8) at (9, 6) {};
+		\node [style=none] (9) at (1, 1) {};
+		\node [style=none] (10) at (1, -0.5) {\(a\)};
+		\node [style=none] (11) at (9, -0.5) {\(b\)};
+		\node [style=none] (12) at (0, 6) {};
+		\node [style=none] (13) at (0, 1) {};
+		\node [style=none] (14) at (-1, 6) {\(f(b)\)};
+		\node [style=none] (15) at (-1, 1) {\(f(a)\)};
+		\node [style=none] (16) at (1, 7) {};
+		\node [style=none] (17) at (9, 7) {};
+		\node [style=none] (18) at (10, 6) {};
+		\node [style=none] (19) at (10, 1) {};
+		\node [style=none] (20) at (2.75, 4.25) {};
+		\node [style=none] (21) at (7.5, 7.25) {};
+		\node [style=none] (22) at (-0.5, 2.25) {};
+		\node [style=none] (24) at (2.75, 0) {};
+		\node [style=none] (25) at (0, 4.25) {};
+		\node [style=none] (26) at (2.75, -0.5) {\textcolor{red}{\(c\)}};
+		\node [style=none] (27) at (-0.5, 4.25) {};
+		\node [style=none] (29) at (-1, 4.25) {\textcolor{red}{\(f(c)\)}};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=Thick arrow line] (2.center) to (0.center);
+		\draw [style=Thick arrow line] (4.center) to (0.center);
+		\draw [style=Thick line, in=-105, out=75, looseness=2.50] (9.center) to (8.center);
+		\draw (16.center) to (5.center);
+		\draw (13.center) to (19.center);
+		\draw (12.center) to (18.center);
+		\draw (17.center) to (1.center);
+		\draw [style=Wide Dashed line] (22.center) to (21.center);
+		\draw [style=Wide Dashed line] (8.center) to (9.center);
+		\draw [style=Red line] (20.center) to (24.center);
+		\draw [style=Red line] (20.center) to (25.center);
+	\end{pgfonlayer}
+\end{tikzpicture}
