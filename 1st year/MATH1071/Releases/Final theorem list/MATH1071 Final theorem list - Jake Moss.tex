@@ -1013,7 +1013,7 @@
         \[\{x \in \mathbb{R}^n ~|~ Ax = b\} = \{y+p ~|~ y \in NS(A)\}\]
     \end{theorem}
     \begin{proof}
-        Observe  that \(A(x-y) = Ax - Ay\) and that \(A(\lambda x) = \lambda Ax\) for all \(x,y \in \mathbb{R}^n, ~ \lambda \in \mathbb{R}\)
+        Observe  that \(A(x+y) = Ax + Ay\) and that \(A(\lambda x) = \lambda Ax\) for all \(x,y \in \mathbb{R}^n, ~ \lambda \in \mathbb{R}\)
 
         Assume \(y \in NS(A)\). Let us prove that 
         \[A(y+p)= b\]
@@ -1099,14 +1099,14 @@
                     a_1\\
                     \vdots\\
                     a_{r-1}\\
-                    \lambda v\\
+                    v\\
                     a_{r+1}\\
                     \vdots\\
                     a_n
                 \end{gmatrix}
             \]
         }
-        Then \(\det(A) = \det(B) + \det(C)\)
+        Then \(\det(A) = \det(B) + \lambda \det(C)\)
     \end{theorem}
     \begin{proof}
         Induction in \(n\).
