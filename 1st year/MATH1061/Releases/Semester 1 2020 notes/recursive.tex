@@ -1,0 +1,68 @@
+\section{Recursive Definitions}
+\begin{example}
+    The sequence $$1,\,1,\,2,\,3,\,5,\,8,\,13,\,21,\,34,\,55,\,\dots$$ is called the \underline{Fibonacci Sequence}
+\end{example}
+
+\begin{definition}
+    A \underline{recurrence relation} for a sequence $a_0,a_1,a_2,\dots$ is a formula that relates each term $a_k$ to some of its predecessors $a_{k-1},\dots,a_{k-i}$ where $i\in\mathbb Z$ and $k-i \geq 0$
+
+    The \underline{initial conditions} for such a recurrence relation specify the values of some of the initial terms.
+\end{definition}
+
+\begin{example}
+The Fibonacci sequence is defined recursively by $$F_0 = 1,\, F_1 = 1,\,\text{and}\,F_n = F_{n-1} + F_{n-2}$$
+\end{example}
+
+\subsection{Ways to Define Sequences}
+A sequence can be defined
+\begin{itemize}
+    \item \emph{informally}, by listing the first few terms of the sequence until the pattern becomes obvious
+    \item \emph{with a general formula}, by stating how a term $a_n$ depends on $n$ and stating where it starts
+    \item \emph{recursively}, by giving a recurrence relation relating terms in the sequence to earlier ones and also some initial conditions
+\end{itemize}
+
+\subsection{Showing a Sequence Satisfies a Recurrence Relation}
+\begin{example}
+Show that the sequence $$a_k = 3\cdot 2^k,\,\text{for }k\geq 0$$ satisfies the recurrence relation $$a_n = 2a_{n-1},\,\text{for }n\geq 1$$
+
+The sequence is $\displaystyle \left\{3\cdot 2^k\right\}_{k\geq 0} = 3,\,6,\,12,\,24,\,48,\,\dots$
+
+For every integer $n\geq 1$ we have $a_n = 3\cdot 2^n$ and $a_{n-1} = 3\cdot 2^{n-1}$
+
+Hence, $$a_n = 3\cdot 2^n = 3\cdot 2\cdot 2^{n-1} = 2 (3\cdot 2^{n-1}) = 2 a_{n-1}$$
+\end{example}
+
+\subsection{Generalised}
+We have seen that sequences of numbers can be defined recursively. Many other objects can be defined recursively as well, such as: sets, sums, products and function.
+
+A recursive definition for a set of objects requires three things:
+\begin{enumerate}
+    \item BASE: a statement that a certain object belongs in the set
+    \item RECURSION: a collection of rules showing how to form new objects for the set from existing ones in the set
+    \item RESTRICTION: a statement that no objects belong to the set other than those arising from steps 1 and 2
+\end{enumerate}
+
+\begin{example}
+    Consider the set of all \underline{valid bracketings}. Every left bracket ( is matched with a right bracket ) and at every stage, reading left to right, there are at least as many left brackets as right brackets.
+    $$(())()\text{ is valid}$$
+    $$()()()\text{ is valid}$$
+    $$())(()\text{ is invalid}$$
+
+    \underline{Recursive definition of the set of valid brakcetings}
+    \begin{enumerate}
+        \item Base: an empty expression with no brackets is valid
+        \item Recursion: \begin{enumerate}
+            \item if B is valid, the (B) is also valid
+            \item if B and C are valid, then BC is also valid
+        \end{enumerate}
+        \item Restriction: Any expression not derived from the rules above is not valid
+    \end{enumerate}
+\end{example}
+
+\begin{definition}
+    Arithmetic Sequences are defined as such:
+    \[a_k = a_{k-1} + d \qquad a_n = a_0 +dn\]
+    Geometric Sequences are defined as such:
+    \[a_k = r\cdot a_{k-1} \qquad a_n = a_0\cdot r^n\]
+\end{definition}
+

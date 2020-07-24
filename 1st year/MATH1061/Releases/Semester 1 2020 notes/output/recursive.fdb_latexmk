@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1567126993 "recursive.tex" "output/recursive.pdf" "recursive" 1567126994
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1528024601 4220279 d2332c24fa6dd0e7803ef8a0b9b1e933 ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "output/recursive.aux" 1567126972 566 a6c484e9ece8850992cb5ef304bb2c7a ""
+  "recursive.tex" 1567126966 685 0598455b6ca7aed944da7414ec31c9e5 ""
+  (generated)
+  "output//recursive.log"
+  "output/recursive.log"
+  "output/recursive.pdf"

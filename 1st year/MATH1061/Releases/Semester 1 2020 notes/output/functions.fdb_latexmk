@@ -1,0 +1,11 @@
+# Fdb version 3
+["pdflatex"] 1567512210 "functions.tex" "output/functions.pdf" "functions" 1567512211
+  "/usr/local/texlive/2018/texmf-dist/web2c/texmf.cnf" 1522066949 33362 cf75436e19743e94a92a6b1b9183c434 ""
+  "/usr/local/texlive/2018/texmf-var/web2c/pdftex/pdflatex.fmt" 1528024601 4220279 d2332c24fa6dd0e7803ef8a0b9b1e933 ""
+  "/usr/local/texlive/2018/texmf.cnf" 1523934483 577 0b39adfd7c93507ff20c9c14c2f1a33f ""
+  "functions.tex" 1567512207 1045 3d24b86aca35fdc5a316db4787109db9 ""
+  "output/functions.aux" 1567504990 780 c9d71b0b91a70599039cc89ae0a9d1b8 ""
+  (generated)
+  "output/functions.log"
+  "output//functions.log"
+  "output/functions.pdf"

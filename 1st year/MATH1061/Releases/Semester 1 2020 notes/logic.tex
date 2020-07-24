@@ -1,0 +1,305 @@
+\section{Logic}
+\subsection{Logical Form}
+\begin{definition}A \underline{statement} or \underline{proposition} is a sentence that is either true or false, but not both.\end{definition}
+
+\begin{example}
+Statements: \begin{itemize}
+    \item The number 5 is even
+    \item $\pi > 3$
+    \item Leonhard Euler was born in 1707
+\end{itemize}
+
+Not statements: \begin{itemize}
+    \item How are you?
+    \item Stop!
+    \item She likes maths. (we do not know who she is)
+    \item $x^2 = 2x - 1$ (we do not know the value of $x$)
+\end{itemize}
+\end{example}
+
+\begin{definition}Let $p$ be a statement. The \underline{negation} of $p$ is denoted as $\sim p$ or $\neg p$ (read as ``not $p$'').$$\begin{array}{|c|c|}
+p & \sim p \\
+\hline
+T & F \\
+F & T
+\end{array}$$
+\end{definition}
+
+
+Let $p$ and $q$ be statements.
+
+\begin{definition}The \underline{conjunction} of $p$ and $q$ is denoted $p \land q$ (read as ``$p$ and $q$'')$$\begin{array}{|c c|c|}
+p & q & p\land q \\
+\hline
+T & T & T \\
+T & F & F \\
+F & T & F \\
+F & F & F
+\end{array}$$\end{definition}
+
+
+\newpage
+\begin{definition}The \underline{disjuction} of $p$ and $q$ is denoted $p \lor q$ (read as ``$p$ or $q$'')$$\begin{array}{|c c|c|}
+p & q & p\lor q \\
+\hline
+T & T & T \\
+T & F & T \\
+F & T & T \\
+F & F & F
+\end{array}$$\end{definition}
+
+
+
+Think of $p$,$q$,$r$ as \underline{statement variables}.
+
+\begin{definition}
+    A \underline{statement form} is made up from statement variables ($p,q,r$) and the symbols $\sim , \land, \lor$ with unambiguous parentheses.
+\end{definition}
+
+\begin{example}
+    $$P = \sim \left(p\lor r\right)\land\left(\sim r\right)$$ is a statement form. How many rows will a truth table for $P$ need? We realise we have 3 statement variables, so we will need $2^3 = 8$ rows.
+\end{example}
+
+
+\subsection{Logical Equivalence}
+\begin{definition}
+    Two statement forms $P$ and $Q$ are \underline{logically equivalent}, denoted $P\equiv Q$, if they have identical truth values for every possible combination of truth values for their statement variables.
+\end{definition}
+
+\begin{example}
+    $$\sim\left(\sim p\right) \equiv p$$
+\end{example}
+
+\begin{multicols}{2}
+\subsubsection{Demorgan's Law}
+$$\sim\left(p\land q\right) \equiv \sim p \lor \sim q$$
+$$\sim\left(p\lor q\right) \equiv \sim p \land \sim q$$
+
+\subsubsection{Commutativity}
+$$p\land q \equiv q \land p$$
+$$p\lor q \equiv q \lor p$$
+
+\subsubsection{Associativity}
+$$p\land \left(q\land r\right) \equiv \left(p\land q\right)\land r$$
+$$p\lor \left(q\lor r\right) \equiv \left(p\lor q\right)\lor r$$
+
+\subsubsection{Distributive Laws}
+$$p\land \left(q\lor r\right) \equiv \left(p\land q\right) \lor \left(p\land r\right)$$
+$$p\lor \left(q\land r\right) \equiv \left(p\lor q\right) \land \left(p\lor r\right)$$
+
+\subsubsection{Double Negative}
+$$\sim\left(\sim p\right) \equiv p$$
+
+\subsubsection{Idempotent Laws}
+$$p\land p \equiv p$$
+$$p\lor p\equiv p$$
+
+\subsubsection{Absorption Laws}
+$$p\lor \left(p\land q\right)\equiv p$$
+$$p\land \left(p\lor q\right)\equiv p$$
+\end{multicols}
+
+
+\subsubsection{Tautolgy and Contradiction}
+\begin{definition}
+    A \underline{tautolgy} is a statement form which always takes the truth value \emph{true} for all possible truth values of its variables.
+\end{definition}
+
+\begin{example}
+    $$\begin{array}{|c c|c|}
+    p & \sim p & p\lor \sim p\\
+    \hline
+    T & F & T\\
+    F & T & T
+    \end{array}$$
+\end{example}
+
+\begin{definition}
+    A \underline{contradiction} is a statement form which always takes the truth value \emph{false} for all possible truth values of its variables.
+\end{definition}
+
+\begin{example}
+    $$\begin{array}{|c c|c|}
+    p & \sim p & p\land \sim p\\
+    \hline
+    T & F & F\\
+    F & T & F
+    \end{array}$$
+\end{example}
+
+\begin{multicols}{2}
+\subsubsection{Identity Laws}
+$$p\land \left(\text{tautolgy}\right) \equiv p$$
+$$p\lor \left(\text{contradiction}\right) \equiv p$$
+
+\subsubsection{Universal Bound Law}
+$$p\lor \left(\text{tautolgy}\right) \equiv \left(\text{tautolgy}\right)$$
+$$p\land \left(\text{contradiction}\right) \equiv \left(\text{contradiction}\right)$$
+
+\subsubsection{Negation Laws}
+$$p\lor \sim p \equiv \text{tautolgy}$$
+$$p\land \sim p \equiv \text{contradiction}$$
+
+\subsubsection{Negations}
+$$\sim \left(\text{tautolgy}\right) \equiv \text{contradiction}$$
+$$\sim \left(\text{contradiction}\right) \equiv \text{tautolgy}$$
+\end{multicols}
+
+\subsection{Conditional Statements}
+\begin{definition}
+    Let $p$ and $q$ be statement variables. The \underline{conditional} from $p$ to $q$, denoted $p\rightarrow q$ (read as ``$p$ implies $q$'' or ``if $p$ then $q$''), is defined by the following truth table:
+    $$\begin{array}{|c c|c|}
+    p & q & p\rightarrow q\\
+    \hline
+    T & T & T\\
+    T & F & F\\
+    F & T & T\\
+    F & F & T
+    \end{array}$$
+\end{definition}
+
+\subsubsection{Expressing the Conditional with Logical Connectives}
+$$p\rightarrow q \equiv \sim p \lor q$$
+
+\subsubsection{Contrapositive}
+\begin{definition}
+    The \underline{contrapositive} of $p\rightarrow q$ is $\sim q \rightarrow \sim p$. These are logically equivalent.
+\end{definition}
+
+\subsubsection{Negation of $p\rightarrow q$}
+$$\sim\left(p\rightarrow q\right) \equiv p\land \sim q$$
+
+\subsubsection{Biconditional Statements}
+\begin{definition}
+    Let $p$ and $q$ be statement variables. The \underline{biconditional} of $p$ and $q$, denoted $p\leftrightarrow q$ (read as ``$p$ if and only if $q$''), is defined by the following truth table:
+    $$\begin{array}{|c c|c|}
+    p & q & p\leftrightarrow q\\
+    \hline
+    T & T & T\\
+    T & F & F\\
+    F & T & F\\
+    F & F & T
+    \end{array}$$
+\end{definition}
+
+\subsection{Arguments}
+\begin{definition}
+    Given a collection of statements $p_1,p_2,\dots,p_n$ (called \underline{premises}) and another statement $q$ (called the \underline{conclusion}), an \underline{argument} is the assertion that the conjunction of the premises implies the conclusion. Symbolically, this is represented as \begin{align*}p_1 \\ p_2 \\ \vdots \\ p_3 \\ \therefore q\end{align*}
+\end{definition}
+
+\begin{definition}
+    An argument is \underline{valid} if whenever all of the premises are true, the conclusion is also true.
+
+    Thus, an argument is valid if $$\left(p_1\land p_2 \land \dots \land p_n\right)\rightarrow q$$ is a tautolgy.
+\end{definition}
+
+\subsubsection{Rules of Inference}
+\begin{multicols}{2}
+Modus Ponens
+\begin{align*}
+    &p\rightarrow q \\
+    &p \\
+    \therefore q
+\end{align*}
+
+Modus Tollens
+\begin{align*}
+    p\rightarrow q \\
+    \sim q\\
+    \therefore \sim p
+\end{align*}
+
+Generalisation
+\begin{align*}
+    &p \qquad\qquad q\\
+    &\therefore p\lor q \quad\therefore p\lor q
+\end{align*}
+
+Specialisation
+\begin{align*}
+    &p\land q\qquad p\land q \\
+    &\therefore p \qquad \therefore q
+\end{align*}
+
+Conjunction
+\begin{align*}
+    &p\\
+    &q\\
+    &\therefore p\land q
+\end{align*}
+
+Elimination
+\begin{align*}
+    &p\lor q \quad p\lor q\\
+    &\sim q \qquad \sim p\\
+    &\therefore p \qquad \therefore q
+\end{align*}
+
+Transitivity
+\begin{align*}
+    p\rightarrow q \\
+    q\rightarrow r \\
+    \therefore p\rightarrow r
+\end{align*}
+
+Proof by Division into Cases
+\begin{align*}
+    &p\lor q \\
+    &p\rightarrow r\\
+    &q\rightarrow r\\
+    &\therefore r
+\end{align*}
+
+Contradiction rule
+\begin{align*}
+    &\sim p\rightarrow \left(\text{contradiction}\right)\\
+    &\therefore p
+\end{align*}
+\end{multicols}
+
+\subsection{Quantified Statements}
+\begin{definition}
+    A \underline{predicate} is a sentence that contains finitely many variables, and which becomes a statement if the variables are given specific values. The \underline{domain} of each variable in a predicate is the set of all possible values that may be assigned to it.
+\end{definition}
+
+\begin{definition}
+    The \underline{truth set} of a predicate $P(x)$ is the set of all values in the domain that, when assigned to $x$, make $P(x)$ a true statement.
+\end{definition}
+
+\begin{example}
+    Let $P(x)$ be the predicate ``$x$ divides 5'' with the set of integers as the domain of $x$. The truth set of $P(x)$ is $\{-5,-1,1,5\}$
+\end{example}
+
+\subsubsection{Common Domains}
+\begin{table}[H]
+\begin{tabular}{|l|l|l|}
+\hline
+Domain & Symbol & Example \\
+\hline
+Integers & $\mathbb{Z}$ & $\{\dots,-3,-2,-1,0,1,2,3,\dots\}$ \\
+Positive Integers & $\mathbb{Z}^+$ & $\{1,2,3,\dots\}$ \\
+Non-negative Integers & $\mathbb{Z}^\text{nonneg} \text{ or } \mathbb{Z}^{\geq 0}$ & $\{0,1,2,3,\dots\}$ \\
+Natural Numbers & $\mathbb{N}$ & $\{1,2,3,\dots\}$ \\
+Rational Numbers & $\mathbb{Q}$ & $\{\frac{a}{b} | a,b\in\mathbb Z \land b\neq 0\}$ \\
+Real Numbers & $\mathbb{R}$ & the entire number line \\
+\hline
+\end{tabular}
+\end{table}
+
+\begin{definition}
+    The Universal Quantifier: The symbol $\forall$ denotes ``for all'' (or ``for each'' or ``for every'') and is called the \underline{universal quantifier}. Let $Q(x)$ be a predicate and $D$ be the domain of $x$. The \underline{universal statement} $$\forall x\in D, Q(x)$$ is true if and only if $Q(x)$ is true for every $x$ in $D$. It is false if and only if $Q(x)$ is false for at least one $x$ in $D$.
+\end{definition}
+
+\begin{definition}
+    The Existential Quantifier: The symbol $\exists$ denotes ``there exists'' (or ``there is'' or ``there are'') and is called the \underline{existential quantifier}. Let $Q(x)$ be a predicate and $D$ be the domain of $x$. The \underline{existential statement} $$\exists x\in D \text{ such that } Q(x)$$ is true if and only if $Q(x)$ is true for at least one $x$ in $D$. It is false if $Q(x)$ is false for every $x$ in $D$.
+\end{definition}
+
+\subsubsection{Universal Conditional Statements}
+One of the most important statement forms in mathematics is $$\forall x \in D \text{ if } P(x) \text{ then } Q(x)$$ or equivalently, $$\forall x\in D, \left(P(x)\rightarrow Q(x)\right)$$
+
+\subsubsection{Negation}
+Recall universal statement $$\forall x\in D, Q(x)$$ The negation of this statement is logically equivalent to $$\exists x\in D \text{ such that } \sim Q(x)$$
+
+Recall existential statement $$\exists x\in D \text{ such that } R(x)$$ The negation of this statement is logically equivalent to $$\forall x\in D, \sim R(x)$$
+
+Recall universal conditional statement $$\forall x\in D \text{ if } P(x) \text{ then } Q(x)$$ The negation of this statement is logically equivalent to $$\exists x\in D \text{ such that } \sim\left(P(x)\rightarrow Q(x)\right)$$ which is $$\exists x\in D \text{ such that } P(x)\land\sim Q(x)$$
