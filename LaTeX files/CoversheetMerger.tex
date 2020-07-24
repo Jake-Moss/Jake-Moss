@@ -1,0 +1,10 @@
+\newcommand{\coversheet}[2]{
+    \includepdf[pagecommand={
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[inner sep=0pt,scale=0.5] (Signature) at (3,-20.75) {\includegraphics[width=.25\textwidth]{/home/jake/Uni/Signature/Signature.png}};
+        \node[inner sep=0pt] (Date) at (5.3,-11.2) {\textsf{\today}};
+        \node[inner sep=0pt] (Gav) at (11.8,-10.05) {\textsf{#1}};
+        \node[inner sep=0pt] (Tut time) at (11.9,-11) {\textsf{#2}};
+        \node[inner sep=0pt] (Date) at (14.55,-20.75) {\textsf{\today}};
+    \end{tikzpicture}}]{Coversheet}
+}
