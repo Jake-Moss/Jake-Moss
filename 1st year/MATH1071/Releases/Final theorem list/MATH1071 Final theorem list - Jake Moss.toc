@@ -3,7 +3,7 @@
 \contentsline {section}{\numberline {\hspace {5pt} 2.}Convergence implies boundedness of the sequence}{4}{section.0.2}%
 \contentsline {section}{\numberline {\hspace {5pt} 3.}Convergence of a bounded, monotone sequence}{4}{section.0.3}%
 \contentsline {section}{\numberline {\hspace {5pt} 4.}Every sequence has a monotone subsequence.}{5}{section.0.4}%
-\contentsline {section}{\numberline {\hspace {5pt} 5.}The Bolzano-Weierstrass theorem.}{6}{section.0.5}%
+\contentsline {section}{\numberline {\hspace {5pt} 5.}The Bolzano-Weierstrass theorem. Does this work?}{6}{section.0.5}%
 \contentsline {chapter}{Limits}{7}{chapter*.3}%
 \contentsline {section}{\numberline {\hspace {5pt} 6.}Algebraic properties of limits}{7}{section.1.6}%
 \contentsline {chapter}{Derivatives}{11}{chapter*.7}%

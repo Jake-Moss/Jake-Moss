@@ -1,5 +1,5 @@
 \usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
-\usepackage[margin=15mm]{geometry}
+% \usepackage[margin=15mm]{geometry}
 \usepackage[dvipsnames]{xcolor}
 \usepackage{graphicx}
 \usepackage{tcolorbox}
@@ -7,8 +7,8 @@
 \usepackage{gauss}
 \usepackage{relsize}
 \usepackage{etoolbox}
-\usepackage[en-GB,showzone=false]{datetime2}
-% \setlength\parindent{0pt}
+% \usepackage[en-GB,showzone=false]{datetime2}
+\setlength\parindent{0pt}
 \usepackage{parskip}
 
 % From Toms preamble
@@ -16,10 +16,49 @@
 \usepackage{float} \restylefloat{table}
 % \definecolor{peach}{RGB}{255,218,185} % Custom colours
 
+% Matlab script thing
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+%% the following commands are needed for some matlab2tikz features
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{arrows.meta}
+\usepgfplotslibrary{patchplots}
+\usepackage{grffile}
+% you may also want the following commands
+\pgfplotsset{plot coordinates/math parser=false}
+\newlength\figureheight%
+\newlength\figurewidth%
+
+
+\usepackage{courier}
+\def\rmdefault{cmr}
+% Listing things
+\usepackage{listings}
+\lstset{language=Matlab,%
+    basicstyle=\footnotesize\ttfamily,%
+    breaklines=true,%
+    morekeywords={matlab2tikz},%
+    keywordstyle=\color{RoyalBlue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{Black}},%
+    identifierstyle=\color{Black},%
+    stringstyle=\color{Magenta},
+    commentstyle=\color{ForestGreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{Black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},
+    xleftmargin=1em,
+}
+
+
+
+
 
 \graphicspath{ {./} }
 
-\allowdisplaybreaks
+\allowdisplaybreaks%
 
 %-------------------------------------------- COMMANDS
 \newcommand{\sidebyside}[2]{
@@ -51,9 +90,9 @@
 
 \newcommand{\ddiff}[1]{\, \frac{\mathrm{d}}{\mathrm{d}  #1}}
 
-\newcommand{\limtoinfinity}[1]{\lim_{#1 \to \infty}}
+\newcommand{\limtoinfinity}[1]{\lim_{#1 \to \infty}}%chktex 1
 
-\newcommand{\limtoneginfinity}[1]{\lim_{#1 \to -\infty}}
+\newcommand{\limtoneginfinity}[1]{\lim_{#1 \to -\infty}}%chktex 1
 
 \newcommand{\abs}[1]{\left| #1 \right|}
 
@@ -68,12 +107,12 @@
         \node[inner sep=0pt] (Gav) at (11.8,-10.05) {\textsf{#1}};
         \node[inner sep=0pt] (Tut time) at (11.9,-11) {\textsf{#2}};
         \node[inner sep=0pt] (Date) at (14.55,-20.75) {\textsf{\today}};
-    \end{tikzpicture}}]{Coversheet}
+    \end{tikzpicture}}]{Coversheet}%chktex 31
 }
 
 %augmented matrix line
 \makeatletter
-\patchcmd\g@matrix
+\patchcmd\g@matrix%
  {\vbox\bgroup}
  {\vbox\bgroup\normalbaselines}% restore the standard base line skip
  {}{}
@@ -83,48 +122,48 @@
 \newcommand{\mline}[1][0pt]{%
   \hspace{-\arraycolsep}%
   \ifdim#1>0pt
-    \dimen0=\ht\strutbox \dimen2=\dimen0
-    \advance\dimen0 #1\relax
-    \ht\strutbox=\dimen0
+    \dimen0=\ht\strutbox \dimen2=\dimen0%chktex 41 %chktex 1
+    \advance\dimen0 #1\relax%chktex 41
+    \ht\strutbox=\dimen0%chktex 41
   \fi
   \smash{\strut\vrule} % the `\vrule` is as high and deep as a strut
   % since assignments to \ht\strutbox are global, we restore the height
   \ifdim#1>0pt
-    \ht\strutbox=\dimen2
+    \ht\strutbox=\dimen2%chktex 41
   \fi
   \hspace{-\arraycolsep}%
 }
 
-% tikz if statement on by default
+% % tikz if statement on by default
 
-\newif\ifshowtikz
-\showtikztrue
+% \newif\ifshowtikz
+% \showtikztrue
 
-% \showtikzfalse   % <---- comment/uncomment that line
-\ifshowtikz
-\input{/home/jake/Uni/LaTeX files/tikzpaper/TikZit.tex}
-\else
-\newcommand{\tikzfig}[1]{}
-\newcommand{\ctikzfig}[1]{}
-\fi 
+% % \showtikzfalse   % <---- comment/uncomment that line
+% \ifshowtikz
+% \input{/home/jake/Uni/LaTeX files/tikzpaper/TikZit.tex}
+% \else
+% \newcommand{\tikzfig}[1]{}
+% \newcommand{\ctikzfig}[1]{}
+% \fi 
 
 % \renewcommand{\thesection}{\hspace{5pt} \arabic{section}.}
 
-\newcommand{\mychapter}[2]{
-    \setcounter{chapter}{#1}
-    \setcounter{section}{0}
-    \chapter*{#2}
-    \addcontentsline{toc}{chapter}{#2}
-}
+% \newcommand{\mychapter}[2]{
+%     \setcounter{chapter}{#1}
+%     \setcounter{section}{0}
+%     \chapter*{#2}
+%     \addcontentsline{toc}{chapter}{#2}
+% }
 
 
 
 % this stupid shit breaks my bracket colourer so I had to make a new command so I don't have miss matched colours
-\newcommand{\rightopenleftclosed}[1]{\left[ \left. #1 \right) \right. } 
-\newcommand{\leftopenrightclosed}[1]{\left( \left. #1 \right] \right. }
+\newcommand{\rightopenleftclosed}[1]{\left[\left. #1 \right) \right. }%chktex 9
+\newcommand{\leftopenrightclosed}[1]{\left(\left. #1 \right] \right. }%chktex 9
 
 \input{/home/jake/Uni/LaTeX files/Enviroments.tex}
 
 %shits gotta come last ffs
 \usepackage{hyperref}
-\hypersetup{pdfauthor={Jake Moss}, pdfkeywords={s46409665 - jake.moss@uqconnect.edu.au}}
+\hypersetup{pdfauthor={Jake Moss}, pdfkeywords={s46409665 - jake.moss@uqconnect.edu.au}}%chktex 8
